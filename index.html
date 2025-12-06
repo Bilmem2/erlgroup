@@ -1,1118 +1,692 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TECHNICA ERL GROUP | İnşaat Malzemeleri ve Hırdavat Toptan Tedarik</title>
+  <title>TECHNICA ERL GROUP | İnşaat Malzemeleri & Hırdavat Toptan</title>
+
+  <meta name="description" content="TECHNICA ERL GROUP, fabrikalar ve toptan satış noktaları için inşaat malzemeleri ve hırdavat ürünlerinde güvenilir tedarik ortağınızdır." />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="TECHNICA ERL GROUP | İnşaat Malzemeleri & Hırdavat Toptan" />
+  <meta property="og:description" content="Fabrikalar ve toptan satış noktaları için inşaat malzemeleri ve hırdavat tedarik çözümleri." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.erlgroup.com.tr" />
+  <meta property="og:image" content="https://www.erlgroup.com.tr/og-image.jpg" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Oswald:wght@400;500&display=swap"
     rel="stylesheet"
   />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
   <style>
-    :root {
-      --bg-page: #f3f4f6;
-      --bg-card: #ffffff;
-      --bg-soft: #f9fafb;
-      --primary: #185c8c;   /* Logo mavi tonuna yakın */
-      --primary-soft: rgba(24, 92, 140, 0.08);
-      --primary-strong: #114366;
-      --text-main: #111827;
-      --text-muted: #6b7280;
-      --border-soft: rgba(148, 163, 184, 0.5);
-      --radius-lg: 18px;
-      --radius-xl: 24px;
-      --radius-pill: 999px;
-      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.12);
-      --max-width: 1120px;
-      --transition-fast: 150ms ease-out;
-      --transition-med: 200ms ease-out;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
-      scroll-behavior: smooth;
-    }
-
     body {
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg-page);
-      color: var(--text-main);
-      -webkit-font-smoothing: antialiased;
+      font-family: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: #f3f4f6;
+      color: #0f172a;
     }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .container {
-      width: 100%;
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    /* Header */
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(209, 213, 219, 0.9);
-      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
-    }
-
-    .nav-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.65rem 0;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .brand-logo-wrap {
-      width: 46px;
-      height: 46px;
-      border-radius: 12px;
-      border: 1px solid rgba(156, 163, 175, 0.5);
-      background: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .brand-text-main {
-      font-weight: 700;
+    .brand-font {
+      font-family: "Oswald", sans-serif;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      font-size: 0.82rem;
-      color: var(--primary-strong);
     }
-
-    .brand-text-sub {
-      font-size: 0.74rem;
-      color: var(--text-muted);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1.4rem;
-      font-size: 0.9rem;
-    }
-
-    .nav-links a {
-      position: relative;
-      padding-bottom: 0.1rem;
-      color: #111827;
-      opacity: 0.85;
-      transition: opacity var(--transition-fast), color var(--transition-fast);
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -0.2rem;
-      height: 2px;
-      width: 0;
-      border-radius: var(--radius-pill);
-      background: var(--primary);
-      transition: width var(--transition-med);
-    }
-
-    .nav-links a:hover {
-      opacity: 1;
-      color: var(--primary-strong);
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .nav-cta {
-      padding: 0.4rem 0.95rem;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--primary);
-      background: var(--primary);
-      color: #ffffff;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.11em;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      cursor: pointer;
-      transition:
-        background var(--transition-med),
-        color var(--transition-med),
-        box-shadow var(--transition-fast),
-        transform var(--transition-fast),
-        border-color var(--transition-med);
-    }
-
-    .nav-cta span:last-child {
-      font-size: 0.9rem;
-    }
-
-    .nav-cta:hover {
-      background: var(--primary-strong);
-      border-color: var(--primary-strong);
-      box-shadow: 0 14px 36px rgba(15, 23, 42, 0.2);
-      transform: translateY(-1px);
-    }
-
-    .nav-toggle {
-      display: none;
-      border: none;
-      background: transparent;
-      font-size: 1.6rem;
-      cursor: pointer;
-      color: #111827;
-    }
-
-    /* Main */
-    main {
-      flex: 1;
-    }
-
-    section {
-      padding: 3.5rem 0;
-    }
-
-    /* Hero */
-    .hero {
-      padding-top: 2.8rem;
-      display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
-      gap: 2.3rem;
-      align-items: center;
-    }
-
-    .hero-kicker {
-      font-size: 0.76rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--primary-strong);
-      margin-bottom: 0.8rem;
-    }
-
-    .hero-title {
-      font-size: clamp(2.1rem, 3vw + 1rem, 3.1rem);
-      line-height: 1.15;
-      margin-bottom: 0.8rem;
-      color: #0f172a;
-    }
-
-    .hero-title span {
-      color: var(--primary-strong);
-    }
-
-    .hero-subtitle {
-      font-size: 0.97rem;
-      color: var(--text-muted);
-      max-width: 34rem;
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.65rem;
-      margin-bottom: 1.9rem;
-    }
-
-    .badge {
-      font-size: 0.78rem;
-      padding: 0.32rem 0.8rem;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(148, 163, 184, 0.8);
-      background: #ffffff;
-      color: #111827;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .badge-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: var(--radius-pill);
-      background: var(--primary);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.9rem;
-    }
-
-    .btn {
-      border-radius: var(--radius-pill);
-      padding: 0.7rem 1.3rem;
-      font-size: 0.9rem;
-      border: 1px solid transparent;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      cursor: pointer;
-      transition:
-        background var(--transition-med),
-        color var(--transition-med),
-        box-shadow var(--transition-fast),
-        transform var(--transition-fast),
-        border-color var(--transition-med);
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      border-color: var(--primary);
-      color: #ffffff;
-      font-weight: 600;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .btn-primary:hover {
-      background: var(--primary-strong);
-      border-color: var(--primary-strong);
-      transform: translateY(-1px);
-      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.22);
-    }
-
-    .btn-outline {
-      border-color: rgba(148, 163, 184, 0.8);
-      background: #ffffff;
-      color: #111827;
-    }
-
-    .btn-outline:hover {
-      border-color: var(--primary-strong);
-      color: var(--primary-strong);
-      background: #f9fafb;
-    }
-
-    .btn-icon {
-      font-size: 1rem;
-    }
-
-    .hero-right {
-      display: flex;
-      justify-content: center;
-    }
-
-    .hero-card {
-      width: 100%;
-      max-width: 360px;
-      background: #ffffff;
-      border-radius: var(--radius-xl);
-      padding: 1.4rem 1.3rem;
-      border: 1px solid rgba(209, 213, 219, 0.9);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .hero-card-logo {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 0.9rem;
-    }
-
-    .hero-card-logo img {
-      max-height: 70px;
-    }
-
-    .hero-card-title {
-      font-size: 0.84rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-muted);
-      margin-bottom: 0.4rem;
-      text-align: center;
-    }
-
-    .hero-card-body {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-      text-align: center;
-      margin-bottom: 1.1rem;
-    }
-
-    .hero-metrics {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.8rem;
-      margin-bottom: 1rem;
-    }
-
-    .metric {
-      border-radius: 0.9rem;
-      border: 1px solid rgba(209, 213, 219, 0.9);
-      padding: 0.55rem 0.7rem;
-      background: #f9fafb;
-    }
-
-    .metric-label {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.13em;
-      color: var(--text-muted);
-      margin-bottom: 0.2rem;
-    }
-
-    .metric-value {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #111827;
-    }
-
-    .metric-sub {
-      font-size: 0.74rem;
-      color: var(--text-muted);
-      margin-top: 0.12rem;
-    }
-
-    .hero-note {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      text-align: center;
-      border-radius: 999px;
-      background: #f3f4f6;
-      padding: 0.4rem 0.75rem;
-    }
-
-    /* Section headings */
-    .section-heading {
-      font-size: 1.6rem;
-      margin-bottom: 0.4rem;
-      color: #0f172a;
-    }
-
-    .section-subheading {
-      font-size: 0.94rem;
-      color: var(--text-muted);
-      max-width: 36rem;
-      margin-bottom: 1.8rem;
-    }
-
-    /* About */
-    .about-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.1fr);
-      gap: 2.2rem;
-      align-items: flex-start;
-    }
-
-    .about-text {
-      font-size: 0.96rem;
-      color: #111827;
-      line-height: 1.7;
-    }
-
-    .about-text p + p {
-      margin-top: 0.9rem;
-    }
-
-    .about-highlights {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-top: 1.4rem;
-    }
-
-    .pill {
-      font-size: 0.8rem;
-      padding: 0.4rem 0.85rem;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(148, 163, 184, 0.9);
-      background: #ffffff;
-      color: #111827;
-    }
-
-    .about-box {
-      border-radius: var(--radius-xl);
-      background: #ffffff;
-      border: 1px solid rgba(209, 213, 219, 0.9);
-      box-shadow: var(--shadow-soft);
-      padding: 1.2rem 1.2rem 1.1rem;
-      font-size: 0.88rem;
-      color: #111827;
-    }
-
-    .about-box-title {
-      font-size: 0.86rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-muted);
-      margin-bottom: 0.5rem;
-    }
-
-    .about-box-list {
-      list-style: none;
-      display: grid;
-      gap: 0.4rem;
-    }
-
-    .about-box-list li::before {
-      content: "•";
-      margin-right: 0.4rem;
-      color: var(--primary);
-    }
-
-    /* Services */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.2rem;
-    }
-
-    .service-card {
-      border-radius: var(--radius-lg);
-      background: #ffffff;
-      border: 1px solid rgba(209, 213, 219, 0.9);
-      box-shadow: var(--shadow-soft);
-      padding: 1.1rem 1rem;
-      font-size: 0.9rem;
-      color: #111827;
-      transition:
-        transform var(--transition-fast),
-        box-shadow var(--transition-fast),
-        border-color var(--transition-fast);
-    }
-
-    .service-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.14);
-      border-color: var(--primary);
-    }
-
-    .service-title {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 0.3rem;
-      color: #0f172a;
-    }
-
-    .service-desc {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-      margin-bottom: 0.6rem;
-    }
-
-    .service-list {
-      list-style: none;
-      display: grid;
-      gap: 0.3rem;
-      font-size: 0.84rem;
-      color: #111827;
-    }
-
-    .service-list li::before {
-      content: "–";
-      margin-right: 0.3rem;
-      color: var(--primary-strong);
-    }
-
-    /* Sectors */
-    .sectors-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 0.8rem;
-    }
-
-    .sector-pill {
-      border-radius: var(--radius-lg);
-      background: #ffffff;
-      border: 1px solid rgba(209, 213, 219, 0.9);
-      padding: 0.7rem 0.9rem;
-      font-size: 0.86rem;
-      color: #111827;
-      display: flex;
-      align-items: center;
-      gap: 0.45rem;
-    }
-
-    .sector-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: var(--radius-pill);
-      background: var(--primary);
-    }
-
-    /* Contact */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.3fr);
-      gap: 2.1rem;
-      align-items: flex-start;
-    }
-
-    .contact-info {
-      font-size: 0.92rem;
-      color: #111827;
-      line-height: 1.7;
-    }
-
-    .contact-list {
-      list-style: none;
-      margin-top: 1.1rem;
-      display: grid;
-      gap: 0.45rem;
-      font-size: 0.88rem;
-    }
-
-    .contact-label {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--text-muted);
-    }
-
-    .contact-value a {
-      color: var(--primary-strong);
-    }
-
-    .contact-box-note {
-      margin-top: 1rem;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      background: #e5e7eb;
-      border-radius: var(--radius-lg);
-      padding: 0.7rem 0.8rem;
-    }
-
-    .contact-form {
-      border-radius: var(--radius-xl);
-      background: #ffffff;
-      border: 1px solid rgba(209, 213, 219, 0.9);
-      box-shadow: var(--shadow-soft);
-      padding: 1.3rem 1.3rem 1.2rem;
-    }
-
-    .form-row {
-      display: grid;
-      gap: 0.9rem;
-      margin-bottom: 0.9rem;
-    }
-
-    .field-label {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-bottom: 0.2rem;
-    }
-
-    .field-label span {
-      color: #b91c1c;
-      margin-left: 0.15rem;
-    }
-
-    .input,
-    .textarea {
-      width: 100%;
-      border-radius: 0.9rem;
-      border: 1px solid rgba(209, 213, 219, 0.95);
-      padding: 0.6rem 0.8rem;
-      font-size: 0.9rem;
-      background: #f9fafb;
-      color: #111827;
-      outline: none;
-      transition:
-        border-color var(--transition-fast),
-        box-shadow var(--transition-fast),
-        background var(--transition-fast),
-        transform var(--transition-fast);
-    }
-
-    .input:focus,
-    .textarea:focus {
-      border-color: var(--primary);
-      background: #ffffff;
-      box-shadow: 0 0 0 1px rgba(24, 92, 140, 0.25);
-      transform: translateY(-1px);
-    }
-
-    .textarea {
-      min-height: 130px;
-      resize: vertical;
-    }
-
-    .form-hint {
-      font-size: 0.76rem;
-      color: var(--text-muted);
-      margin-top: 0.1rem;
-    }
-
-    /* Footer */
-    .site-footer {
-      border-top: 1px solid rgba(209, 213, 219, 0.9);
-      background: #ffffff;
-      padding: 1rem 0 1.3rem;
-      margin-top: 1.8rem;
-    }
-
-    .footer-inner {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.7rem;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.9rem;
-    }
-
-    .footer-links a:hover {
-      color: var(--primary-strong);
-    }
-
-    /* Responsive */
-    @media (max-width: 960px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
+    .nav-blur {
+      backdrop-filter: blur(16px);
+      background: rgba(248, 250, 252, 0.97);
+    }
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(16px);
       }
-      .hero-right {
-        order: -1;
-      }
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .services-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .sectors-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+      100% {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
-
-    @media (max-width: 720px) {
-      .nav-links {
-        position: absolute;
-        right: 1.5rem;
-        top: 100%;
-        margin-top: 0.4rem;
-        background: #ffffff;
-        border-radius: 14px;
-        border: 1px solid rgba(209, 213, 219, 0.95);
-        box-shadow: 0 14px 36px rgba(15, 23, 42, 0.16);
-        padding: 0.8rem 1rem;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.85rem;
-        min-width: 190px;
-        display: none;
+    .animate-fade-in-up {
+      opacity: 0;
+      animation: fadeInUp 0.7s ease-out forwards;
+    }
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
       }
-
-      .nav-links.open {
-        display: flex;
+      50% {
+        transform: translateY(-3px);
       }
-
-      .nav-cta {
-        width: 100%;
-        justify-content: center;
-      }
-
-      .nav-toggle {
-        display: block;
-      }
-
-      section {
-        padding: 2.7rem 0;
-      }
-
-      .services-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .sectors-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
+    }
+    .floating-cta {
+      animation: float 3s ease-in-out infinite;
     }
   </style>
 </head>
-<body>
-  <div class="page">
-    <!-- HEADER -->
-    <header class="site-header">
-      <div class="container">
-        <div class="nav-bar">
-          <div class="brand">
-            <div class="brand-logo-wrap">
-              <!-- Logo dosyanı aynı klasöre koy ve ismini burada düzenle -->
-              <img src="logo.png" alt="TECHNICA ERL GROUP Logosu" />
-            </div>
-            <div>
-              <div class="brand-text-main">TECHNICA ERL GROUP</div>
-              <div class="brand-text-sub">İnşaat Malzemeleri & Hırdavat Toptan Tedarik</div>
-            </div>
-          </div>
+<body class="bg-slate-50 text-slate-900">
+  <div class="min-h-screen flex flex-col">
+    <!-- Üst iletişim bar -->
+    <div class="hidden md:block bg-slate-900 text-slate-100 text-xs">
+      <div class="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+          <span class="inline-flex items-center gap-1">
+            <i data-lucide="phone" class="w-3.5 h-3.5 text-emerald-400"></i>
+            <a href="tel:02826522122" class="hover:text-white/90">0282 652 2122</a>
+          </span>
+          <span class="inline-flex items-center gap-1">
+            <i data-lucide="mail" class="w-3.5 h-3.5 text-amber-300"></i>
+            <a href="mailto:info@erlgroup.com.tr" class="hover:text-white/90">info@erlgroup.com.tr</a>
+          </span>
+        </div>
+        <span class="inline-flex items-center gap-1 text-[11px] text-slate-300">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          Pzt-Cum 08:00–19:30 | H.Sonu Açık
+        </span>
+      </div>
+    </div>
 
-          <nav>
-            <button class="nav-toggle" aria-label="Menüyü aç/kapat" onclick="toggleNav()">☰</button>
-            <div class="nav-links" id="navLinks">
-              <a href="#home">Ana Sayfa</a>
-              <a href="#about">Hakkımızda</a>
-              <a href="#services">Hizmetler</a>
-              <a href="#sectors">Sektörler</a>
-              <a href="#contact">İletişim</a>
-              <button
-                class="nav-cta"
-                onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });"
-              >
-                <span>Teklif Al</span>
-                <span>↗</span>
-              </button>
+    <!-- Navbar -->
+    <header id="site-header" class="sticky top-0 z-40 border-b border-slate-200 nav-blur">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex items-center justify-between py-3">
+          <!-- Logo -->
+          <a href="#home" class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-2xl border border-slate-200 bg-white flex items-center justify-center shadow-sm">
+              <img src="logo.png" alt="TECHNICA ERL GROUP Logosu" class="max-h-9 object-contain" />
             </div>
+            <div class="leading-tight">
+              <div class="brand-font text-[11px] text-slate-700 tracking-[0.32em]">
+                TECHNICA ERL GROUP
+              </div>
+              <div class="text-[11px] text-slate-500">
+                İnşaat Malzemeleri & Hırdavat Toptan
+              </div>
+            </div>
+          </a>
+
+          <!-- Desktop Menu -->
+          <nav class="hidden md:flex items-center gap-7 text-sm">
+            <a href="#about" class="hover:text-blue-800">Kurumsal</a>
+            <a href="#products" class="hover:text-blue-800">Ürün Grupları</a>
+            <a href="#how" class="hover:text-blue-800">Nasıl Çalışıyoruz?</a>
+            <a href="#contact" class="hover:text-blue-800">İletişim</a>
+            <a
+              href="#contact"
+              class="bg-blue-900 text-white px-4 py-2 rounded-full text-xs font-semibold shadow-sm hover:bg-blue-800 flex items-center gap-1 transition"
+            >
+              <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+              Teklif Al
+            </a>
+          </nav>
+
+          <!-- Mobile Button -->
+          <button
+            id="mobile-menu-button"
+            class="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-xl border border-slate-300 bg-white"
+          >
+            <i id="mobile-menu-icon" data-lucide="menu" class="w-5 h-5 text-slate-800"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="md:hidden fixed inset-0 z-30 hidden">
+        <div class="absolute inset-0 bg-slate-900/60"></div>
+        <div class="absolute top-0 right-0 w-72 max-w-full h-full bg-slate-950 text-slate-50 flex flex-col">
+          <div class="flex items-center justify-between px-5 py-4 border-b border-slate-800">
+            <div class="flex items-center gap-2">
+              <div class="w-9 h-9 rounded-2xl border border-slate-700 bg-slate-900 flex items-center justify-center">
+                <img src="logo.png" alt="Logo" class="max-h-7 object-contain" />
+              </div>
+              <div class="leading-tight">
+                <div class="brand-font text-[10px] tracking-[0.28em] text-slate-200">
+                  TECHNICA ERL GROUP
+                </div>
+                <div class="text-[11px] text-slate-400">Endüstriyel Tedarik</div>
+              </div>
+            </div>
+            <button
+              id="mobile-menu-close"
+              class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-slate-900 border border-slate-700"
+            >
+              <i data-lucide="x" class="w-4 h-4 text-slate-200"></i>
+            </button>
+          </div>
+          <nav class="flex-1 px-5 py-4 text-sm">
+            <a href="#about" class="block py-2.5 border-b border-slate-800/60" data-mobile-link>Kurumsal</a>
+            <a href="#products" class="block py-2.5 border-b border-slate-800/60" data-mobile-link>Ürün Grupları</a>
+            <a href="#how" class="block py-2.5 border-b border-slate-800/60" data-mobile-link>Nasıl Çalışıyoruz?</a>
+            <a href="#contact" class="block py-2.5 border-b border-slate-800/60" data-mobile-link>İletişim</a>
+            <a
+              href="#contact"
+              class="mt-4 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-blue-600 text-xs font-semibold"
+              data-mobile-link
+            >
+              <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+              Teklif Al
+            </a>
           </nav>
         </div>
       </div>
     </header>
 
-    <main>
+    <!-- Ana içerik -->
+    <main id="home" class="flex-1">
       <!-- HERO -->
-      <section id="home">
-        <div class="container hero">
-          <div>
-            <div class="hero-kicker">İNŞAAT MALZEMELERİ • HIRDAVAT • TOPTAN TEDARİK</div>
-            <h1 class="hero-title">
-              Fabrikalar ve toptan alımlar için<br />
-              <span>güvenilir hırdavat tedarik ortağı.</span>
-            </h1>
-            <p class="hero-subtitle">
-              TECHNICA ERL GROUP, inşaat malzemeleri ve hırdavat ürünleri ticaretinde
-              uzmanlaşmış; öncelikli olarak <strong>fabrikalar</strong> ve
-              <strong>toptan satış</strong> yapan işletmelere hizmet veren bir şirkettir.
-              Amacımız, müşteri memnuniyetini odağa alarak uzun vadeli, sağlam iş ortaklıkları
-              kurmaktır.
+      <section class="bg-slate-50 relative overflow-hidden">
+        <div class="absolute -top-8 -right-16 w-52 h-52 bg-blue-100 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
+        <div class="max-w-6xl mx-auto px-4 py-10 md:py-16">
+          <div class="grid md:grid-cols-2 gap-10 items-center">
+            <!-- Left: Metin -->
+            <div class="max-w-xl animate-fade-in-up">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-[11px] text-blue-900">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span class="brand-font tracking-[0.28em]">İNŞAAT MALZEMELERİ • HIRDAVAT</span>
+              </div>
+              <div class="space-y-4 mt-4">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 brand-font">
+                  <span class="block leading-tight">Fabrikalar ve toptan alımlar için</span>
+                  <span class="block text-blue-900 mt-4 leading-tight">
+                    güvenilir tedarik ortağınız.
+                  </span>
+                </h1>
+                <p class="text-slate-600 text-sm md:text-base">
+                  TECHNICA ERL GROUP; inşaat malzemeleri ve hırdavat ürünlerinde
+                  <strong>fabrikalar</strong>, <strong>sanayi işletmeleri</strong> ve
+                  <strong>toptan satış</strong> yapan firmalara odaklı çalışan bir B2B tedarik firmasıdır.
+                </p>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-3 mt-5">
+                <a
+                  href="#contact"
+                  class="inline-flex items-center px-5 py-3 rounded-full bg-blue-900 text-white text-sm font-semibold shadow-md hover:bg-blue-800 transition"
+                >
+                  <i data-lucide="file-text" class="w-4 h-4 mr-2"></i>
+                  Toptan Teklif Talep Et
+                </a>
+                <a
+                  href="#products"
+                  class="inline-flex items-center px-5 py-3 rounded-full bg-white border border-slate-300 text-sm font-semibold text-slate-800 hover:border-blue-700 hover:text-blue-800 transition"
+                >
+                  <i data-lucide="grid-2x2-check" class="w-4 h-4 mr-2"></i>
+                  Ürün Gruplarını Gör
+                </a>
+              </div>
+
+              <div class="grid grid-cols-3 gap-3 text-xs md:text-sm mt-6">
+                <div class="rounded-xl bg-white border border-slate-200 p-3 shadow-sm">
+                  <div class="text-[11px] text-slate-500 uppercase tracking-[0.18em] brand-font mb-1">Deneyim</div>
+                  <div class="font-semibold text-slate-900">30+ yıl</div>
+                  <div class="text-[11px] text-slate-500">1990’lardan beri sahada</div>
+                </div>
+                <div class="rounded-xl bg-white border border-slate-200 p-3 shadow-sm">
+                  <div class="text-[11px] text-slate-500 uppercase tracking-[0.18em] brand-font mb-1">Odak</div>
+                  <div class="font-semibold text-slate-900">Toptan satış</div>
+                  <div class="text-[11px] text-slate-500">Fabrika & sanayi</div>
+                </div>
+                <div class="rounded-xl bg-blue-900 text-blue-50 p-3 shadow-sm">
+                  <div class="text-[11px] text-blue-200 uppercase tracking-[0.18em] brand-font mb-1">Yaklaşım</div>
+                  <div class="font-semibold text-white">Uzun vadeli</div>
+                  <div class="text-[11px] text-blue-100">Düzenli tedarik modeli</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Logo odaklı temiz kart (No People) -->
+            <div class="relative">
+              <div class="absolute -top-6 -left-4 w-32 h-32 bg-emerald-100 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
+              <div class="relative rounded-3xl bg-slate-900 shadow-xl border border-slate-700 p-8 md:p-10 flex flex-col items-center justify-center text-center text-slate-100 transition-transform duration-500 hover:scale-[1.01]">
+                <!-- LOGO BÜYÜTÜLDÜ -->
+                <div class="w-32 h-32 md:w-40 md:h-40 rounded-3xl bg-white flex items-center justify-center mb-6 border border-slate-200 shadow-lg p-2">
+                  <img src="logo.png" alt="TECHNICA ERL GROUP Logosu" class="max-h-24 md:max-h-28 object-contain" />
+                </div>
+                
+                <h2 class="brand-font text-sm md:text-base tracking-[0.35em] text-white mb-3">
+                  TECHNICA ERL GROUP
+                </h2>
+                
+                <div class="w-16 h-0.5 bg-blue-500 rounded-full mb-4"></div>
+
+                <p class="text-xs md:text-sm text-slate-300 mb-6 max-w-xs leading-relaxed">
+                  İnşaat malzemeleri ve hırdavat alanında, fabrikalar ve sanayi işletmeleri için B2B toptan tedarik ortağı.
+                </p>
+
+                <div class="flex flex-wrap justify-center gap-2.5 text-[11px] font-medium">
+                  <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-600 inline-flex items-center gap-1.5 text-slate-200">
+                    <i data-lucide="factory" class="w-3.5 h-3.5 text-emerald-400"></i>
+                    Fabrika & Sanayi
+                  </span>
+                  <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-600 inline-flex items-center gap-1.5 text-slate-200">
+                    <i data-lucide="truck" class="w-3.5 h-3.5 text-sky-400"></i>
+                    Düzenli Sevkiyat
+                  </span>
+                  <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-600 inline-flex items-center gap-1.5 text-slate-200">
+                    <i data-lucide="users" class="w-3.5 h-3.5 text-amber-400"></i>
+                    Uzun Vadeli İş Ortaklığı
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- KURUMSAL -->
+      <section id="about" class="py-12 bg-white">
+        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-start">
+          <div class="space-y-3">
+            <p class="text-[11px] uppercase tracking-[0.3em] text-blue-900 brand-font">Kurumsal</p>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 brand-font">
+              TECHNICA ERL GROUP
+            </h2>
+            <p class="text-slate-600 text-sm md:text-base">
+              TECHNICA ERL GROUP, inşaat malzemeleri ve hırdavat ürünleri ticaretinde;
+              <strong>fabrikalar</strong>, <strong>üretim tesisleri</strong> ve
+              <strong>toptan alım</strong> yapan işletmelere odaklanan bir tedarik firmasıdır.
             </p>
-
-            <div class="hero-badges">
-              <div class="badge">
-                <span class="badge-dot"></span>
-                1990’lardan gelen sektör deneyimi
-              </div>
-              <div class="badge">
-                <span class="badge-dot"></span>
-                Kurucumuz: Erol Sevilmiş
-              </div>
-              <div class="badge">
-                <span class="badge-dot"></span>
-                ARTI TEKNİK deneyimiyle güçlenen yapı
-              </div>
-            </div>
-
-            <div class="hero-actions">
-              <button
-                class="btn btn-primary"
-                onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });"
-              >
-                <span>Toplu Teklif Talep Et</span>
-                <span class="btn-icon">➜</span>
-              </button>
-              <a href="#" class="btn btn-outline">
-                <span>Kurumsal Tanıtım / Katalog (PDF)</span>
-                <span class="btn-icon">↓</span>
-              </a>
-            </div>
+            <p class="text-slate-600 text-sm md:text-base">
+              Şirket, 1990’lı yıllardan bu yana sektörde aktif olan
+              <strong>Erol Sevilmiş</strong> tarafından kurulmuş; kardeş şirket
+              <strong>ARTI TEKNİK</strong>’ten gelen saha deneyimi ile güçlenerek,
+              bugün ağırlıklı olarak B2B toptan satışa odaklanmıştır.
+            </p>
           </div>
-
-          <div class="hero-right">
-            <aside class="hero-card">
-              <div class="hero-card-logo">
-                <img src="logo.png" alt="TECHNICA ERL GROUP Logosu" />
-              </div>
-              <div class="hero-card-title">Toptan tedarikte odak noktamız</div>
-              <div class="hero-card-body">
-                İnşaat malzemeleri ve hırdavat ürünlerinde doğru ürünü, doğru zamanda ve
-                sürdürülebilir fiyat politikasıyla sunarak fabrikanızın kesintisiz çalışmasına
-                katkı sağlıyoruz.
-              </div>
-              <div class="hero-metrics">
-                <div class="metric">
-                  <div class="metric-label">Odak</div>
-                  <div class="metric-value">Toptan satış</div>
-                  <div class="metric-sub">Fabrikalar & sanayi işletmeleri</div>
-                </div>
-                <div class="metric">
-                  <div class="metric-label">Deneyim</div>
-                  <div class="metric-value">1990’lardan beri</div>
-                  <div class="metric-sub">Erol Sevilmiş & ARTI TEKNİK</div>
-                </div>
-              </div>
-              <div class="hero-note">
-                Uzun vadeli iş birliği, düzenli tedarik ve şeffaf iletişim üzerine kurulu
-                bir yaklaşım benimsiyoruz.
-              </div>
-            </aside>
+          <div class="grid sm:grid-cols-3 gap-4 text-xs md:text-sm">
+            <div class="rounded-2xl bg-slate-50 border border-slate-200 p-3">
+              <div class="text-[11px] text-slate-500 uppercase tracking-[0.2em] brand-font mb-1">Misyon</div>
+              <p class="text-slate-700">
+                Fabrika ve sanayi müşterilerine güvenilir, planlı tedarik çözümleri sunmak.
+              </p>
+            </div>
+            <div class="rounded-2xl bg-slate-50 border border-slate-200 p-3">
+              <div class="text-[11px] text-slate-500 uppercase tracking-[0.2em] brand-font mb-1">Vizyon</div>
+              <p class="text-slate-700">
+                Bölgesel ölçekte “sorunsuz tedarik ortağı” olarak konumlanmak.
+              </p>
+            </div>
+            <div class="rounded-2xl bg-slate-50 border border-slate-200 p-3">
+              <div class="text-[11px] text-slate-500 uppercase tracking-[0.2em] brand-font mb-1">Değerler</div>
+              <p class="text-slate-700">
+                Güven, süreklilik, şeffaflık ve çözüm odaklılık.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- ABOUT -->
-      <section id="about">
-        <div class="container">
-          <h2 class="section-heading">Hakkımızda</h2>
-          <p class="section-subheading">
-            TECHNICA ERL GROUP; hırdavat ve inşaat malzemeleri tedarikinde, özellikle
-            fabrikalar ve toptan alım yapan işletmeler için güvenilir bir çözüm ortağı
-            olmayı hedefler.
-          </p>
+      <!-- ÜRÜN GRUPLARI -->
+      <section id="products" class="py-16 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4">
+          <div class="text-center max-w-2xl mx-auto mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3 brand-font">Ürün Gruplarımız</h2>
+            <p class="text-slate-600 text-sm md:text-base">
+              El aletlerinden iş güvenliği ekipmanlarına, yapı malzemelerinden endüstriyel sarf ve elektrik
+              ürünlerine kadar geniş bir ürün portföyünü, stoklu ve planlı tedarik anlayışıyla sunuyoruz.
+            </p>
+          </div>
 
-          <div class="about-grid">
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- 1: Elektrikli El Aletleri (KULLANICI SEÇİMİ: Yellow Dewalt hand drills) -->
+            <article class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition hover:-translate-y-1 hover:shadow-md">
+              <div class="h-40 overflow-hidden relative">
+                <img
+                  src="https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=800&q=80"
+                  alt="Sarı renkli Dewalt marka elektrikli el matkapları"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-4 space-y-2 text-sm">
+                <h3 class="font-semibold text-slate-900 flex items-center justify-between">
+                  Elektrikli El Aletleri
+                  <i data-lucide="zap" class="w-4 h-4 text-amber-500"></i>
+                </h3>
+                <ul class="space-y-1 text-slate-600 text-xs">
+                  <li>Matkap, taşlama, kırıcı ve kesme makineleri</li>
+                  <li>Endüstriyel kullanım için uygun seriler</li>
+                  <li>Farklı marka ve güç seçenekleri</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- 2: El Aletleri & El Takımları (KULLANICI SEÇİMİ: Person holding a wrench) -->
+            <article class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition hover:-translate-y-1 hover:shadow-md">
+              <div class="h-40 overflow-hidden relative">
+                <img
+                  src="https://images.unsplash.com/photo-1533630682229-237194857b28?auto=format&fit=crop&w=800&q=80"
+                  alt="Sağ elinde İngiliz anahtarı tutan kişi"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-4 space-y-2 text-sm">
+                <h3 class="font-semibold text-slate-900 flex items-center justify-between">
+                  El Aletleri & El Takımları
+                  <i data-lucide="hammer" class="w-4 h-4 text-slate-700"></i>
+                </h3>
+                <ul class="space-y-1 text-slate-600 text-xs">
+                  <li>Lokma takımları, tornavida setleri, anahtarlar</li>
+                  <li>Profesyonel atölye ve bakım ekipmanları</li>
+                  <li>Dayanıklı ve uzun ömürlü ürün seçenekleri</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- 3: İş Güvenliği & KKD (KULLANICI SEÇİMİ: Caucasian handsome male industrial worker) -->
+            <article class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition hover:-translate-y-1 hover:shadow-md">
+              <div class="h-40 overflow-hidden relative">
+                <img
+                  src="https://images.unsplash.com/photo-1535198031295-88544d620584?auto=format&fit=crop&w=800&q=80"
+                  alt="Fabrikada baret ve koruyucu gözlük takan endüstriyel çalışan"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-4 space-y-2 text-sm">
+                <h3 class="font-semibold text-slate-900 flex items-center justify-between">
+                  İş Güvenliği & KKD
+                  <i data-lucide="shield" class="w-4 h-4 text-emerald-700"></i>
+                </h3>
+                <ul class="space-y-1 text-slate-600 text-xs">
+                  <li>Baret, eldiven, gözlük, kulak koruyucu</li>
+                  <li>İş ayakkabısı ve koruyucu giyim ürünleri</li>
+                  <li>Saha ve tesis güvenliği için çözümler</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- 4: Bağlantı Elemanları (KULLANICI SEÇİMİ: A close-up of a syringe) -->
+            <article class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition hover:-translate-y-1 hover:shadow-md">
+              <div class="h-40 overflow-hidden relative">
+                <img
+                  src="https://images.unsplash.com/photo-1585644198526-004d80a37330?auto=format&fit=crop&w=800&q=80"
+                  alt="Kimyasal dübel ve bağlantı uygulamaları için detay görseli"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-4 space-y-2 text-sm">
+                <h3 class="font-semibold text-slate-900 flex items-center justify-between">
+                  Bağlantı Elemanları
+                  <i data-lucide="link-2" class="w-4 h-4 text-slate-700"></i>
+                </h3>
+                <ul class="space-y-1 text-slate-600 text-xs">
+                  <li>Cıvata, somun, rondela, dübel grupları</li>
+                  <li>Özel ölçü, kalite ve kaplama seçenekleri</li>
+                  <li>Endüstriyel ambalaj ve paketleme çözümleri</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- 5: Yapı Malzemeleri & Sarf (KULLANICI SEÇİMİ: A shelf filled with lots of different types of bricks) -->
+            <article class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition hover:-translate-y-1 hover:shadow-md">
+              <div class="h-40 overflow-hidden relative">
+                <img
+                  src="https://images.unsplash.com/photo-1590069261209-f8e9b8642343?auto=format&fit=crop&w=800&q=80"
+                  alt="Raflarda sergilenen farklı çeşitlerde tuğla ve yapı malzemeleri"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-4 space-y-2 text-sm">
+                <h3 class="font-semibold text-slate-900 flex items-center justify-between">
+                  Yapı Malzemeleri & Sarf
+                  <i data-lucide="layers" class="w-4 h-4 text-slate-700"></i>
+                </h3>
+                <ul class="space-y-1 text-slate-600 text-xs">
+                  <li>Silikon, köpük, mastik ve yapıştırıcılar</li>
+                  <li>Teknik spreyler, izolasyon ve dolgu ürünleri</li>
+                  <li>Şantiye ve montaj süreçlerine yönelik sarf malzemeleri</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- 6: Endüstriyel Ürünler & Atölye (ALTERNATİF: Depo Çalışanı) -->
+            <article class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition hover:-translate-y-1 hover:shadow-md">
+              <div class="h-40 overflow-hidden relative">
+                <img
+                  src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=800&q=80"
+                  alt="Depo ve antrepo alanında çalışan formen"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-4 space-y-2 text-sm">
+                <h3 class="font-semibold text-slate-900 flex items-center justify-between">
+                  Endüstriyel Ürünler & Atölye
+                  <i data-lucide="settings" class="w-4 h-4 text-slate-700"></i>
+                </h3>
+                <ul class="space-y-1 text-slate-600 text-xs">
+                  <li>Atölye ekipmanları, arabalar ve raf sistemleri</li>
+                  <li>Endüstriyel sarf ve bakım ürünleri</li>
+                  <li>Elektrik ve aydınlatma grupları için çözümler</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+
+          <!-- Hedef müşteri chipleri -->
+          <div class="mt-10 flex flex-wrap gap-2 text-xs text-slate-600">
+            <span class="px-4 py-2 rounded-full bg-white border border-slate-200">Fabrikalar & üretim tesisleri</span>
+            <span class="px-4 py-2 rounded-full bg-white border border-slate-200">Sanayi işletmeleri</span>
+            <span class="px-4 py-2 rounded-full bg-white border border-slate-200">Toptan satış yapan firmalar</span>
+            <span class="px-4 py-2 rounded-full bg-white border border-slate-200">Proje & şantiye firmaları</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- NASIL ÇALIŞIYORUZ -->
+      <section id="how" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+          <div class="text-center max-w-2xl mx-auto mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3 brand-font">
+              Nasıl Çalışıyoruz?
+            </h2>
+            <p class="text-slate-600 text-sm md:text-base">
+              Her işletmenin ihtiyaç yapısı farklıdır. Bu nedenle tedarik sürecimizi; karşılıklı şeffaflık,
+              süreklilik ve planlı çalışma prensipleriyle, üç temel adımda yapılandırıyoruz.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-6 text-sm">
+            <div class="bg-slate-50 rounded-2xl border border-slate-200 p-4 shadow-sm">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="w-7 h-7 rounded-full bg-blue-100 flex items-center justify-center text-xs font-semibold text-blue-900">
+                  1
+                </div>
+                <span class="font-semibold text-slate-900">İhtiyaçların Paylaşılması</span>
+              </div>
+              <p class="text-slate-600 text-xs md:text-sm">
+                Sizden, düzenli olarak tükettiğiniz ürün gruplarını, tahmini kullanım adetlerini ve sevkiyat
+                adres(ler)inizi içeren kısa bir ihtiyaç özeti talep ederiz. Böylece ilk çerçeveyi birlikte netleştiririz.
+              </p>
+            </div>
+            <div class="bg-slate-50 rounded-2xl border border-slate-200 p-4 shadow-sm">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="w-7 h-7 rounded-full bg-blue-100 flex items-center justify-center text-xs font-semibold text-blue-900">
+                  2
+                </div>
+                <span class="font-semibold text-slate-900">Teklif & Planlama</span>
+              </div>
+              <p class="text-slate-600 text-xs md:text-sm">
+                Bu bilgiler doğrultusunda, alternatif ürün ve marka seçeneklerini, fiyatlamayı ve teslimat
+                sıklığını içeren bir ön teklif çalışması hazırlarız. Sizinle birlikte üzerinden geçerek
+                ihtiyaçlarınıza en uygun tedarik modelini belirleriz.
+              </p>
+            </div>
+            <div class="bg-slate-50 rounded-2xl border border-slate-200 p-4 shadow-sm">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="w-7 h-7 rounded-full bg-blue-100 flex items-center justify-center text-xs font-semibold text-blue-900">
+                  3
+                </div>
+                <span class="font-semibold text-slate-900">Uygulama & Süreklilik</span>
+              </div>
+              <p class="text-slate-600 text-xs md:text-sm">
+                Onaylanan model çerçevesinde, planlanan periyotlarda sevkiyatları gerçekleştirir; stok
+                sürekliliği ve tedarik performansını birlikte takip ederiz. Uzun vadeli iş birlikleri için
+                gerekli iyileştirmeleri düzenli olarak değerlendiririz.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- İLETİŞİM -->
+      <section id="contact" class="py-16 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-10 items-stretch">
+          <!-- Info & Çalışma Saatleri -->
+          <div class="flex flex-col space-y-6">
             <div>
-              <div class="about-text">
-                <p>
-                  TECHNICA ERL GROUP, inşaat malzemeleri ve hırdavat ürünleri ticaretinde
-                  uzmanlaşmış, öncelikli olarak fabrikalar, üretim tesisleri ve toptan alım
-                  yapan işletmelere yönelik çalışan bir firmadır. Amacımız; doğru ürün, doğru
-                  fiyat ve zamanında teslimat prensibiyle müşterilerimizin tedarik süreçlerini
-                  sadeleştirmek ve güvenilir, sürdürülebilir iş ilişkileri kurmaktır.
-                </p>
-                <p>
-                  Şirketimiz, 1990’lı yıllardan bu yana hırdavat sektöründe aktif olan
-                  <strong>Erol Sevilmiş</strong> tarafından kurulmuştur. Yıllar içinde oluşan
-                  piyasa tecrübesi, ürün bilgisi ve tedarikçi ağı, TECHNICA ERL GROUP’un
-                  temelini oluşturmaktadır. Kardeş şirketimiz <strong>ARTI TEKNİK</strong> ile
-                  perakende ve sahaya dönük operasyonlardan elde ettiğimiz deneyimi, bugün
-                  ağırlıklı olarak <strong>toptan satış ve kurumsal çözümler</strong> tarafına
-                  taşıyoruz.
-                </p>
-              </div>
-
-              <div class="about-highlights">
-                <div class="pill">İnşaat malzemeleri & hırdavat ürünleri</div>
-                <div class="pill">Fabrika ve sanayi işletmelerine odaklı</div>
-                <div class="pill">Uzun vadeli tedarik anlaşmaları</div>
-                <div class="pill">Şeffaf fiyatlama ve stok yönetimi</div>
-              </div>
-            </div>
-
-            <aside class="about-box">
-              <div class="about-box-title">Misyon, vizyon ve değerler</div>
-              <ul class="about-box-list">
-                <li>
-                  <strong>Misyon:</strong> İnşaat ve hırdavat sektöründeki kurumsal
-                  müşterilerimize, ihtiyaç duydukları ürünleri güvenilir tedarik zinciri,
-                  rekabetçi fiyatlama ve düzenli stok yönetimiyle sunmak.
-                </li>
-                <li>
-                  <strong>Vizyon:</strong> Hırdavat ve inşaat malzemeleri toptan
-                  ticaretinde, özellikle fabrikalar ve büyük ölçekli işletmeler için
-                  “sorunsuz tedarik ortağı” olarak tanınan, bölgesel ölçekte güçlü ve
-                  sürdürülebilir bir marka olmak.
-                </li>
-                <li>
-                  <strong>Değerler:</strong> Güvenilirlik, süreklilik, şeffaflık,
-                  deneyim ve çözüm odaklılık.
-                </li>
-              </ul>
-            </aside>
-          </div>
-        </div>
-      </section>
-
-      <!-- SERVICES -->
-      <section id="services">
-        <div class="container">
-          <h2 class="section-heading">Hizmetlerimiz</h2>
-          <p class="section-subheading">
-            TECHNICA ERL GROUP, kurumsal müşterilerine ihtiyaçlara göre şekillenen
-            esnek tedarik çözümleri sunar.
-          </p>
-
-          <div class="services-grid">
-            <article class="service-card">
-              <h3 class="service-title">İnşaat Malzemeleri Toptan Tedarik</h3>
-              <p class="service-desc">
-                Proje ve şantiyeleriniz için temel inşaat malzemelerini toplu ve düzenli
-                şekilde tedarik ediyoruz.
+              <h2 class="text-2xl md:text-3xl font-bold text-slate-900 brand-font">
+                İletişim & Teklif Talepleri
+              </h2>
+              <p class="text-slate-600 text-sm md:text-base mt-2">
+                Toptan alımlarınız ve uzun vadeli tedarik iş birlikleri için bizimle iletişime geçebilirsiniz.
               </p>
-              <ul class="service-list">
-                <li>Proje bazlı toplu ürün planlama</li>
-                <li>Düzenli sevkiyat ve teslimat takibi</li>
-                <li>Farklı marka ve kalite seçenekleri</li>
-              </ul>
-            </article>
-
-            <article class="service-card">
-              <h3 class="service-title">Hırdavat & Endüstriyel Ürünler</h3>
-              <p class="service-desc">
-                Fabrika bakım, onarım ve üretim süreçlerinde kullanılan hırdavat ve
-                yardımcı malzemelerin tedariğini üstleniyoruz.
-              </p>
-              <ul class="service-list">
-                <li>Geniş ürün gamı ve alternatifler</li>
-                <li>Stok devamlılığına uygun ürün önerileri</li>
-                <li>Tek elden tedarikle süreçlerin sadeleştirilmesi</li>
-              </ul>
-            </article>
-
-            <article class="service-card">
-              <h3 class="service-title">Tedarik ve Lojistik Koordinasyonu</h3>
-              <p class="service-desc">
-                Farklı kalemlerdeki ürünler için teslimat planlamasını tek noktadan
-                yönetmenize yardımcı oluyoruz.
-              </p>
-              <ul class="service-list">
-                <li>Teslimat zamanlamasının proje takvimine göre ayarlanması</li>
-                <li>Uzun vadeli tedarik anlaşmaları</li>
-                <li>İhtiyaca uygun esnek sipariş modelleri</li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- SECTORS -->
-      <section id="sectors">
-        <div class="container">
-          <h2 class="section-heading">Kime Hizmet Veriyoruz?</h2>
-          <p class="section-subheading">
-            Ürün ve hizmetlerimiz ağırlıklı olarak düzenli ve hacimli alım yapan kurumsal
-            müşterilere yöneliktir.
-          </p>
-
-          <div class="sectors-grid">
-            <div class="sector-pill">
-              <span class="sector-dot"></span>
-              Fabrikalar & üretim tesisleri
             </div>
-            <div class="sector-pill">
-              <span class="sector-dot"></span>
-              Sanayi işletmeleri
-            </div>
-            <div class="sector-pill">
-              <span class="sector-dot"></span>
-              Toptan satış yapan firmalar
-            </div>
-            <div class="sector-pill">
-              <span class="sector-dot"></span>
-              Proje & şantiye firmaları
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- CONTACT -->
-      <section id="contact">
-        <div class="container">
-          <h2 class="section-heading">İletişim ve Teklif</h2>
-          <p class="section-subheading">
-            Toptan alımlarınız ve uzun vadeli tedarik iş birlikleri için bizimle iletişime
-            geçebilirsiniz.
-          </p>
-
-          <div class="contact-grid">
-            <div class="contact-info">
-              <p>
-                Fabrikanızın veya işletmenizin düzenli ihtiyaç duyduğu hırdavat ve inşaat
-                malzemeleri için planlı ve sürdürülebilir bir tedarik yapısı kurmayı
-                hedefliyorsanız, TECHNICA ERL GROUP ile çalışabilirsiniz.
-              </p>
-
-              <ul class="contact-list">
-                <li>
-                  <div class="contact-label">E-posta</div>
-                  <div class="contact-value">
-                    <!-- Buraya gerçek mail adresinizi yazın -->
-                    <a href="mailto:info@erlgroup.com.tr">info@erlgroup.com.tr</a>
+            <div class="space-y-4 text-sm bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+              <!-- Adres -->
+              <div class="flex items-start gap-4">
+                <span class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
+                  <i data-lucide="map-pin" class="w-5 h-5 text-blue-900"></i>
+                </span>
+                <div>
+                  <div class="text-[11px] uppercase tracking-[0.2em] text-slate-500 brand-font mb-1">
+                    Adres
                   </div>
-                </li>
-                <li>
-                  <div class="contact-label">Telefon</div>
-                  <div class="contact-value">
-                    <!-- Buraya gerçek telefon numaranızı yazın -->
-                    +90 (___) ___ __ __
-                  </div>
-                </li>
-                <li>
-                  <div class="contact-label">Adres</div>
-                  <div class="contact-value">
-                    <!-- Buraya adres yazabilirsiniz -->
-                    Firma adres bilgisi buraya gelecek.
-                  </div>
-                </li>
-              </ul>
-
-              <div class="contact-box-note">
-                Not: Bu sayfadaki iletişim formu, tasarım amaçlıdır. Gerçek teklif
-                süreçleri için lütfen doğrudan e-posta veya telefon yoluyla iletişime
-                geçiniz ya da form alt yapısı ekleyiniz.
-              </div>
-            </div>
-
-            <form class="contact-form" onsubmit="handleDummySubmit(event)">
-              <div class="form-row">
-                <div>
-                  <label class="field-label" for="name">
-                    Firma / İsim <span>*</span>
-                  </label>
-                  <input class="input" type="text" id="name" name="name" required />
-                </div>
-                <div>
-                  <label class="field-label" for="email">
-                    E-posta <span>*</span>
-                  </label>
-                  <input class="input" type="email" id="email" name="email" required />
-                </div>
-              </div>
-
-              <div class="form-row">
-                <div>
-                  <label class="field-label" for="phone">
-                    Telefon
-                  </label>
-                  <input class="input" type="text" id="phone" name="phone" />
-                </div>
-              </div>
-
-              <div class="form-row">
-                <div>
-                  <label class="field-label" for="message">
-                    Talep Detayları <span>*</span>
-                  </label>
-                  <textarea class="textarea" id="message" name="message" required></textarea>
-                  <p class="form-hint">
-                    Örnek: Ürün kalemleri, tahmini adetler, teslimat sıklığı, lokasyon vb.
+                  <p class="text-slate-800 font-medium leading-snug">
+                    Esentepe, İstanbul Cad 11/A,<br />
+                    59850 Çorlu/Tekirdağ, Türkiye
                   </p>
                 </div>
               </div>
 
-              <button type="submit" class="btn btn-primary">
-                <span>Teklif Talebini Gönder</span>
-                <span class="btn-icon">➤</span>
+              <!-- Telefon -->
+              <div class="flex items-start gap-4">
+                <span class="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center shrink-0">
+                  <i data-lucide="phone" class="w-5 h-5 text-emerald-700"></i>
+                </span>
+                <div>
+                  <div class="text-[11px] uppercase tracking-[0.2em] text-slate-500 brand-font mb-1">
+                    Telefon
+                  </div>
+                  <p class="text-slate-800 font-medium">
+                    <a href="tel:02826522122" class="hover:text-blue-800 transition">0282 652 2122</a>
+                  </p>
+                </div>
+              </div>
+
+              <!-- E-posta -->
+              <div class="flex items-start gap-4">
+                <span class="w-10 h-10 rounded-full bg-amber-50 flex items-center justify-center shrink-0">
+                  <i data-lucide="mail" class="w-5 h-5 text-amber-700"></i>
+                </span>
+                <div>
+                  <div class="text-[11px] uppercase tracking-[0.2em] text-slate-500 brand-font mb-1">
+                    E-posta
+                  </div>
+                  <p class="text-slate-800 font-medium">
+                    <a href="mailto:info@erlgroup.com.tr" class="text-blue-700 hover:underline">
+                      info@erlgroup.com.tr
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Çalışma Saatleri -->
+              <div class="border-t border-slate-100 pt-4 mt-2">
+                <div class="flex items-start gap-4">
+                   <span class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center shrink-0">
+                    <i data-lucide="clock" class="w-5 h-5 text-slate-700"></i>
+                  </span>
+                  <div class="w-full">
+                    <div class="text-[11px] uppercase tracking-[0.2em] text-slate-500 brand-font mb-2">
+                      Çalışma Saatleri
+                    </div>
+                    <ul class="text-xs text-slate-600 space-y-1 w-full max-w-xs">
+                      <li class="flex justify-between"><span>Pazartesi</span> <span>08:00 – 19:30</span></li>
+                      <li class="flex justify-between"><span>Salı</span> <span>08:00 – 19:30</span></li>
+                      <li class="flex justify-between"><span>Çarşamba</span> <span>08:00 – 19:30</span></li>
+                      <li class="flex justify-between"><span>Perşembe</span> <span>08:00 – 19:30</span></li>
+                      <li class="flex justify-between"><span>Cuma</span> <span>08:00 – 19:30</span></li>
+                      <li class="flex justify-between"><span>Cumartesi</span> <span>08:00 – 19:00</span></li>
+                      <li class="flex justify-between font-semibold text-slate-800"><span>Pazar</span> <span>10:00 – 18:00</span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Map + Form -->
+          <div class="space-y-5">
+            <!-- Harita -->
+            <div class="rounded-3xl shadow-lg border-4 border-white overflow-hidden bg-slate-200 h-64 md:h-80 relative group">
+              <iframe
+                src="https://maps.google.com/maps?q=ARTI+TEKN%C4%B0K+MARKET+Tekirda%C4%9F+%C3%87orlu&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                class="grayscale-[30%] group-hover:grayscale-0 transition duration-700"
+              ></iframe>
+              <!-- Harita üzeri etiket -->
+              <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-lg shadow-sm border border-slate-200 text-xs font-semibold text-slate-800 pointer-events-none">
+                📍 Çorlu Mağaza & Depo
+              </div>
+            </div>
+
+            <form
+              class="rounded-3xl bg-white border border-slate-200 p-5 md:p-6 shadow-sm space-y-4 text-sm"
+            >
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-medium text-slate-700 mb-1.5">Firma / İsim <span class="text-red-500">*</span></label>
+                  <input
+                    type="text"
+                    class="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                    placeholder="Firma Adı A.Ş."
+                    required
+                  />
+                </div>
+                <div>
+                  <label class="block text-xs font-medium text-slate-700 mb-1.5">E-posta <span class="text-red-500">*</span></label>
+                  <input
+                    type="email"
+                    class="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                    placeholder="ornek@sirket.com"
+                    required
+                  />
+                </div>
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-700 mb-1.5">Telefon</label>
+                <input
+                  type="text"
+                  class="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                  placeholder="05XX XXX XX XX"
+                />
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-700 mb-1.5">Talep Detayları <span class="text-red-500">*</span></label>
+                <textarea
+                  class="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 min-h-[100px] transition"
+                  placeholder="Ürün ihtiyaçlarınız ve miktar bilgisi..."
+                  required
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full md:w-auto inline-flex items-center justify-center px-6 py-3 rounded-full bg-blue-900 text-white text-sm font-semibold shadow-md hover:bg-blue-800 hover:shadow-lg transition transform active:scale-95"
+              >
+                <i data-lucide="send" class="w-4 h-4 mr-2"></i>
+                Talebinizi Gönderin
               </button>
             </form>
           </div>
@@ -1120,35 +694,82 @@
       </section>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <div class="container">
-        <div class="footer-inner">
-          <div>
-            © <span id="year"></span> TECHNICA ERL GROUP. Tüm hakları saklıdır.
-          </div>
-          <div class="footer-links">
-            <a href="#home">Başa dön ↑</a>
-            <span>|</span>
-            <span>erlgroup.com.tr</span>
-          </div>
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 bg-white">
+      <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] text-slate-500">
+        <div>© <span id="year"></span> TECHNICA ERL GROUP. Tüm hakları saklıdır.</div>
+        <div class="flex items-center gap-3">
+          <a href="#home" class="hover:text-blue-800 flex items-center gap-1">
+            <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+            Başa dön
+          </a>
+          <span class="hidden md:inline-block text-slate-400">|</span>
+          <span>Çorlu / Tekirdağ</span>
         </div>
       </div>
     </footer>
   </div>
 
+  <!-- WhatsApp Hızlı İletişim -->
+  <a
+    href="https://wa.me/905336516680"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="fixed bottom-5 right-5 z-50 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2.5 rounded-full shadow-lg shadow-emerald-500/40 flex items-center gap-2 text-xs md:text-sm font-semibold floating-cta"
+  >
+    <i data-lucide="message-circle" class="w-4 h-4"></i>
+    WhatsApp ile İletişim
+  </a>
+
   <script>
-    function toggleNav() {
-      const nav = document.getElementById("navLinks");
-      nav.classList.toggle("open");
-    }
-
-    function handleDummySubmit(e) {
-      e.preventDefault();
-      alert("Bu form şu anda yalnızca tasarım amaçlıdır. Gerçek teklif süreci için e-posta/telefon veya bir form altyapısı eklemelisiniz.");
-    }
-
+    // Yıl
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Lucide
+    lucide.createIcons();
+
+    // Header shadow
+    const header = document.getElementById("site-header");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 10) {
+        header.classList.add("shadow-md");
+      } else {
+        header.classList.remove("shadow-md");
+      }
+    });
+
+    // Mobile menu
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const mobileMenuClose = document.getElementById("mobile-menu-close");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const mobileLinks = document.querySelectorAll("[data-mobile-link]");
+    const mobileMenuIcon = document.getElementById("mobile-menu-icon");
+
+    function openMobileMenu() {
+      mobileMenu.classList.remove("hidden");
+      document.body.classList.add("overflow-hidden");
+      if (mobileMenuIcon) {
+        mobileMenuIcon.setAttribute("data-lucide", "x");
+        lucide.createIcons();
+      }
+    }
+
+    function closeMobileMenu() {
+      mobileMenu.classList.add("hidden");
+      document.body.classList.remove("overflow-hidden");
+      if (mobileMenuIcon) {
+        mobileMenuIcon.setAttribute("data-lucide", "menu");
+        lucide.createIcons();
+      }
+    }
+
+    if (mobileMenuButton) {
+      mobileMenuButton.addEventListener("click", openMobileMenu);
+    }
+    if (mobileMenuClose) {
+      mobileMenuClose.addEventListener("click", closeMobileMenu);
+    }
+    mobileLinks.forEach((link) => link.addEventListener("click", closeMobileMenu));
   </script>
 </body>
 </html>
