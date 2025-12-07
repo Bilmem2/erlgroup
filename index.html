@@ -6,7 +6,7 @@
   <title>TECHNICA ERL GROUP | İnşaat Malzemeleri & Hırdavat Toptan</title>
 
   <meta name="description" content="TECHNICA ERL GROUP, fabrikalar ve toptan satış noktaları için inşaat malzemeleri ve hırdavat ürünlerinde güvenilir tedarik ortağınızdır." />
-  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="TECHNICA ERL GROUP | İnşaat Malzemeleri & Hırdavat Toptan" />
@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Oswald:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Oswald:wght@400;500;700&display=swap"
     rel="stylesheet"
   />
 
@@ -58,16 +58,26 @@
       opacity: 0;
       animation: fadeInUp 0.7s ease-out forwards;
     }
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-3px);
-      }
+    /* WhatsApp Butonu İçin Özel Nefes Alma Animasyonu */
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.6); }
     }
-    .floating-cta {
-      animation: float 3s ease-in-out infinite;
+    .animate-heartbeat {
+      animation: heartbeat 2.5s infinite ease-in-out;
+    }
+
+    /* Kayan Bant Animasyonu (Infinite Marquee) */
+    /* Süre (duration) marka sayısı arttığı için 80s'ye çıkarıldı, daha sakin aksın */
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-scroll {
+      animation: scroll 80s linear infinite;
+    }
+    .marquee-container:hover .animate-scroll {
+      animation-play-state: paused; /* Üzerine gelince dursun */
     }
   </style>
 </head>
@@ -242,39 +252,143 @@
             </div>
 
             <!-- Right: Logo odaklı temiz kart (No People) -->
-            <div class="relative">
-              <div class="absolute -top-6 -left-4 w-32 h-32 bg-emerald-100 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
-              <div class="relative rounded-3xl bg-slate-900 shadow-xl border border-slate-700 p-8 md:p-10 flex flex-col items-center justify-center text-center text-slate-100 transition-transform duration-500 hover:scale-[1.01]">
-                <!-- LOGO BÜYÜTÜLDÜ -->
-                <div class="w-32 h-32 md:w-40 md:h-40 rounded-3xl bg-white flex items-center justify-center mb-6 border border-slate-200 shadow-lg p-2">
-                  <img src="logo.png" alt="TECHNICA ERL GROUP Logosu" class="max-h-24 md:max-h-28 object-contain" />
+            <div class="relative mt-8 md:mt-0">
+              <div class="absolute -top-6 -left-4 w-40 h-40 bg-emerald-100 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
+              <div class="relative rounded-3xl bg-slate-900 shadow-2xl border border-slate-700 p-10 md:p-12 flex flex-col items-center justify-center text-center text-slate-100 transition-transform duration-500 hover:scale-[1.01]">
+                <!-- LOGO BÜYÜTÜLDÜ (DAHA DA BELİRGİN) -->
+                <!-- Container boyutu w-64 h-64 ve max-h-52 değerlerine çıkarıldı -->
+                <div class="w-56 h-56 md:w-80 md:h-80 rounded-3xl bg-white flex items-center justify-center mb-8 border-4 border-slate-200 shadow-xl p-6 transform hover:scale-105 transition duration-300">
+                  <img src="logo.png" alt="TECHNICA ERL GROUP Logosu" class="max-h-40 md:max-h-60 object-contain" />
                 </div>
                 
-                <h2 class="brand-font text-sm md:text-base tracking-[0.35em] text-white mb-3">
+                <h2 class="brand-font text-lg md:text-xl tracking-[0.4em] text-white mb-4">
                   TECHNICA ERL GROUP
                 </h2>
                 
-                <div class="w-16 h-0.5 bg-blue-500 rounded-full mb-4"></div>
+                <div class="w-24 h-1 bg-blue-500 rounded-full mb-6"></div>
 
-                <p class="text-xs md:text-sm text-slate-300 mb-6 max-w-xs leading-relaxed">
+                <p class="text-sm md:text-base text-slate-300 mb-8 max-w-xs leading-relaxed">
                   İnşaat malzemeleri ve hırdavat alanında, fabrikalar ve sanayi işletmeleri için B2B toptan tedarik ortağı.
                 </p>
 
-                <div class="flex flex-wrap justify-center gap-2.5 text-[11px] font-medium">
-                  <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-600 inline-flex items-center gap-1.5 text-slate-200">
-                    <i data-lucide="factory" class="w-3.5 h-3.5 text-emerald-400"></i>
+                <div class="flex flex-wrap justify-center gap-3 text-xs font-semibold">
+                  <span class="px-4 py-2 rounded-lg bg-slate-800 border border-slate-600 inline-flex items-center gap-2 text-slate-200 shadow-sm">
+                    <i data-lucide="factory" class="w-4 h-4 text-emerald-400"></i>
                     Fabrika & Sanayi
                   </span>
-                  <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-600 inline-flex items-center gap-1.5 text-slate-200">
-                    <i data-lucide="truck" class="w-3.5 h-3.5 text-sky-400"></i>
+                  <span class="px-4 py-2 rounded-lg bg-slate-800 border border-slate-600 inline-flex items-center gap-2 text-slate-200 shadow-sm">
+                    <i data-lucide="truck" class="w-4 h-4 text-sky-400"></i>
                     Düzenli Sevkiyat
-                  </span>
-                  <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-600 inline-flex items-center gap-1.5 text-slate-200">
-                    <i data-lucide="users" class="w-3.5 h-3.5 text-amber-400"></i>
-                    Uzun Vadeli İş Ortaklığı
                   </span>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- YENİ BÖLÜM: KAYAN MARKA LOGOLARI (INFINITE SCROLL) -->
+      <section class="border-y border-slate-200 bg-slate-100 py-10 overflow-hidden marquee-container">
+        <div class="max-w-full">
+          <p class="text-center text-xs font-bold text-slate-400 uppercase tracking-widest mb-10 brand-font">
+            Çalıştığımız Başlıca Güçlü Markalar
+          </p>
+          
+          <div class="relative w-full overflow-hidden">
+            <!-- Kaydırma efekti için iç taşıyıcı (2 set logo içerir) -->
+            <div class="flex items-center gap-20 animate-scroll w-max opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+              
+              <!-- LOGO SET 1 -->
+              <div class="flex items-center gap-16 text-xl md:text-2xl font-bold text-slate-500 whitespace-nowrap select-none">
+                <!-- Küresel Devler -->
+                <span class="font-black tracking-tighter" title="Bosch">BOSCH</span>
+                <span class="italic font-black tracking-tighter text-teal-700/60" title="Makita">makita</span>
+                <span class="font-bold tracking-tight" title="DeWalt"><span class="bg-slate-300 text-slate-600 px-1 rounded-sm text-lg align-middle mr-0.5">DE</span>WALT</span>
+                <span class="font-black tracking-wider" title="Stanley">STANLEY</span>
+                <span class="font-black tracking-tighter text-3xl text-red-600/60" title="3M">3M</span>
+                <span class="font-bold tracking-tight text-red-700/60" title="Würth">WÜRTH</span>
+                
+                <!-- İş Güvenliği & Kimyasal -->
+                <span class="text-slate-700 tracking-tighter font-black" title="Delta Plus">DELTAPLUS</span>
+                <span class="italic font-black text-blue-800/60" title="Loctite">LOCTITE</span>
+                <span class="font-bold text-red-700/60" title="Henkel">Henkel</span>
+                <span class="font-black italic text-yellow-600/60" title="Pattex">Pattex</span>
+                <span class="font-bold tracking-wide" title="Sista">Sista</span>
+                <span class="font-black tracking-widest text-red-600/60" title="Dayson">DAYSON</span>
+                
+                <!-- Teknik & Hırdavat -->
+                <span class="italic tracking-tighter text-blue-900/60 font-black" title="SKF">SKF</span>
+                <span class="font-black text-blue-800/60" title="Kale Kilit">KALE KİLİT</span>
+                <span class="font-bold tracking-tighter text-yellow-600/60" title="Yale">Yale</span>
+                <span class="font-black tracking-widest text-red-800/60" title="İzeltaş">İZELTAŞ</span>
+                <span class="tracking-wider text-orange-600/60 font-black" title="Beta">Beta</span>
+                <span class="font-bold" title="Cetaform">Ceta Form</span>
+                <span class="font-black text-red-600/60" title="RTRMax">RTRMAX</span>
+                <span class="font-black text-red-700/60" title="Magmaweld">magmaweld</span>
+                <span class="font-black tracking-wide" title="Karbosan">Karbosan</span>
+                <span class="font-bold" title="Atlas Zımpara">Atlas</span>
+                
+                <!-- Yapı & Tesisat & Diğer -->
+                <span class="font-bold tracking-tight" title="ECA">E.C.A</span>
+                <span class="font-light tracking-widest" title="Newarc">NEWARC</span>
+                <span class="font-black" title="NSK">NSK</span>
+                <span class="font-bold" title="Viptec">Viptec</span>
+                <span class="text-xl" title="Standart Cıvata">Standart Cıvata</span>
+                <span class="font-black tracking-tight" title="Kastaş">KASTAŞ</span>
+                <span class="font-bold" title="Tomax">Tomax</span>
+                <span class="font-light tracking-widest" title="Valtemo">VALTEMO</span>
+                <span class="font-bold" title="Ottoflex">Ottoflex</span>
+                <span class="font-bold italic" title="Adolin">Adolin</span>
+                <span class="font-bold" title="Ersan Boya">Ersan</span>
+                <span class="font-bold" title="Egesan">Egesan</span>
+                <span class="font-bold tracking-tighter" title="Trakya Döküm">TRAKYA DÖKÜM</span>
+                <span class="font-bold" title="Mercure">Mercure</span>
+                <span class="italic font-bold" title="Vento">Vento</span>
+                <span class="font-black tracking-tighter" title="ROX">ROX</span>
+              </div>
+
+              <!-- LOGO SET 2 (Sonsuz döngü için kopya) -->
+              <div class="flex items-center gap-16 text-xl md:text-2xl font-bold text-slate-500 whitespace-nowrap select-none">
+                <span class="font-black tracking-tighter" title="Bosch">BOSCH</span>
+                <span class="italic font-black tracking-tighter text-teal-700/60" title="Makita">makita</span>
+                <span class="font-bold tracking-tight" title="DeWalt"><span class="bg-slate-300 text-slate-600 px-1 rounded-sm text-lg align-middle mr-0.5">DE</span>WALT</span>
+                <span class="font-black tracking-wider" title="Stanley">STANLEY</span>
+                <span class="font-black tracking-tighter text-3xl text-red-600/60" title="3M">3M</span>
+                <span class="font-bold tracking-tight text-red-700/60" title="Würth">WÜRTH</span>
+                <span class="text-slate-700 tracking-tighter font-black" title="Delta Plus">DELTAPLUS</span>
+                <span class="italic font-black text-blue-800/60" title="Loctite">LOCTITE</span>
+                <span class="font-bold text-red-700/60" title="Henkel">Henkel</span>
+                <span class="font-black italic text-yellow-600/60" title="Pattex">Pattex</span>
+                <span class="font-bold tracking-wide" title="Sista">Sista</span>
+                <span class="font-black tracking-widest text-red-600/60" title="Dayson">DAYSON</span>
+                <span class="italic tracking-tighter text-blue-900/60 font-black" title="SKF">SKF</span>
+                <span class="font-black text-blue-800/60" title="Kale Kilit">KALE KİLİT</span>
+                <span class="font-bold tracking-tighter text-yellow-600/60" title="Yale">Yale</span>
+                <span class="font-black tracking-widest text-red-800/60" title="İzeltaş">İZELTAŞ</span>
+                <span class="tracking-wider text-orange-600/60 font-black" title="Beta">Beta</span>
+                <span class="font-bold" title="Cetaform">Ceta Form</span>
+                <span class="font-black text-red-600/60" title="RTRMax">RTRMAX</span>
+                <span class="font-black text-red-700/60" title="Magmaweld">magmaweld</span>
+                <span class="font-black tracking-wide" title="Karbosan">Karbosan</span>
+                <span class="font-bold" title="Atlas Zımpara">Atlas</span>
+                <span class="font-bold tracking-tight" title="ECA">E.C.A</span>
+                <span class="font-light tracking-widest" title="Newarc">NEWARC</span>
+                <span class="font-black" title="NSK">NSK</span>
+                <span class="font-bold" title="Viptec">Viptec</span>
+                <span class="text-xl" title="Standart Cıvata">Standart Cıvata</span>
+                <span class="font-black tracking-tight" title="Kastaş">KASTAŞ</span>
+                <span class="font-bold" title="Tomax">Tomax</span>
+                <span class="font-light tracking-widest" title="Valtemo">VALTEMO</span>
+                <span class="font-bold" title="Ottoflex">Ottoflex</span>
+                <span class="font-bold italic" title="Adolin">Adolin</span>
+                <span class="font-bold" title="Ersan Boya">Ersan</span>
+                <span class="font-bold" title="Egesan">Egesan</span>
+                <span class="font-bold tracking-tighter" title="Trakya Döküm">TRAKYA DÖKÜM</span>
+                <span class="font-bold" title="Mercure">Mercure</span>
+                <span class="italic font-bold" title="Vento">Vento</span>
+                <span class="font-black tracking-tighter" title="ROX">ROX</span>
+              </div>
+
             </div>
           </div>
         </div>
@@ -702,8 +816,19 @@
 
     <!-- Footer -->
     <footer class="border-t border-slate-200 bg-white">
-      <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] text-slate-500">
-        <div>© <span id="year"></span> TECHNICA ERL GROUP. Tüm hakları saklıdır.</div>
+      <div class="max-w-6xl mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+        <div class="text-center md:text-left">
+          <div class="mb-1">© <span id="year"></span> TECHNICA ERL GROUP. Tüm hakları saklıdır.</div>
+          <!-- Kurumsal Linkler (Güven Göstergesi) -->
+          <div class="space-x-2 text-slate-400">
+            <a href="#" class="hover:text-blue-800 transition">KVKK Aydınlatma Metni</a>
+            <span>|</span>
+            <a href="#" class="hover:text-blue-800 transition">Gizlilik Politikası</a>
+            <span>|</span>
+            <a href="#" class="hover:text-blue-800 transition">Çerez Politikası</a>
+          </div>
+        </div>
+        
         <div class="flex items-center gap-3">
           <a href="#home" class="hover:text-blue-800 flex items-center gap-1">
             <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
@@ -716,14 +841,14 @@
     </footer>
   </div>
 
-  <!-- WhatsApp Hızlı İletişim -->
+  <!-- WhatsApp Hızlı İletişim (Canlı Animasyonlu) -->
   <a
     href="https://wa.me/905336516680"
     target="_blank"
     rel="noopener noreferrer"
-    class="fixed bottom-5 right-5 z-50 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2.5 rounded-full shadow-lg shadow-emerald-500/40 flex items-center gap-2 text-xs md:text-sm font-semibold floating-cta"
+    class="fixed bottom-5 right-5 z-50 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2.5 rounded-full shadow-lg flex items-center gap-2 text-xs md:text-sm font-semibold animate-heartbeat transition-all duration-300"
   >
-    <i data-lucide="message-circle" class="w-4 h-4"></i>
+    <i data-lucide="message-circle" class="w-5 h-5"></i>
     WhatsApp ile İletişim
   </a>
 
