@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TEKNHICA ERL GROUP | İnşaat Malzemeleri & Hırdavat Toptan</title>
 
-  <meta name="description" content="TECHNICA ERL GROUP, fabrikalar ve toptan satış noktaları için inşaat malzemeleri ve hırdavat ürünlerinde güvenilir tedarik ortağınızdır." />
+  <meta name="description" content="TEKNHICA ERL GROUP, fabrikalar ve toptan satış noktaları için inşaat malzemeleri ve hırdavat ürünlerinde güvenilir tedarik ortağınızdır." />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
   <!-- Open Graph -->
@@ -88,7 +88,8 @@
         <div class="flex items-center gap-4">
           <span class="inline-flex items-center gap-1">
             <i data-lucide="phone" class="w-3.5 h-3.5 text-emerald-400"></i>
-            <a href="tel:02826522122" class="hover:text-white/90">0282 652 2122</a>
+            <!-- Telefon Numarası Güncellendi -->
+            <a href="tel:+905336516680" class="hover:text-white/90">+90 533 651 66 80</a>
           </span>
           <span class="inline-flex items-center gap-1">
             <i data-lucide="mail" class="w-3.5 h-3.5 text-amber-300"></i>
@@ -109,11 +110,11 @@
           
           <!-- Logo -->
           <a href="#home" class="flex items-center gap-4">
-            <div class="w-16 h-16 rounded-2xl border border-slate-200 bg-white flex items-center justify-center shadow-md transition-transform hover:scale-105">
-              <img src="logo.png" alt="TEKNHICA ERL GROUP Logosu" class="max-h-12 object-contain" />
+            <div class="w-20 h-20 rounded-2xl border border-slate-200 bg-white flex items-center justify-center shadow-md transition-transform hover:scale-105">
+              <img src="logo.png" alt="TEKNHICA ERL GROUP Logosu" class="max-h-16 object-contain" />
             </div>
             <div class="leading-tight">
-              <div class="brand-font text-sm md:text-base font-bold text-slate-800 tracking-[0.25em]">
+              <div class="brand-font text-base md:text-lg font-bold text-slate-800 tracking-[0.25em]">
                 TEKNHICA ERL GROUP
               </div>
               <div class="text-xs text-slate-500 font-medium">
@@ -255,9 +256,9 @@
             <div class="relative mt-8 md:mt-0">
               <div class="absolute -top-6 -left-4 w-40 h-40 bg-emerald-100 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
               <div class="relative rounded-3xl bg-slate-900 shadow-2xl border border-slate-700 p-10 md:p-12 flex flex-col items-center justify-center text-center text-slate-100 transition-transform duration-500 hover:scale-[1.01]">
-                <!-- LOGO BÜYÜTÜLDÜ -->
-                <div class="w-56 h-56 md:w-80 md:h-80 rounded-3xl bg-white flex items-center justify-center mb-8 border-4 border-slate-200 shadow-xl p-6 transform hover:scale-105 transition duration-300">
-                  <img src="logo.png" alt="TEKNHICA ERL GROUP Logosu" class="max-h-40 md:max-h-60 object-contain" />
+                <!-- LOGO BÜYÜTÜLDÜ: Kutu boyutu aynı, iç boşluk (p-6 -> p-2) azaldı, görsel büyüdü -->
+                <div class="w-56 h-56 md:w-80 md:h-80 rounded-3xl bg-white flex items-center justify-center mb-8 border-4 border-slate-200 shadow-xl p-2 transform hover:scale-105 transition duration-300">
+                  <img src="logo.png" alt="TEKNHICA ERL GROUP Logosu" class="max-h-48 md:max-h-72 object-contain" />
                 </div>
                 
                 <h2 class="brand-font text-lg md:text-xl tracking-[0.4em] text-white mb-4">
@@ -625,7 +626,8 @@
                     Telefon
                   </div>
                   <p class="text-slate-800 font-medium">
-                    <a href="tel:02826522122" class="hover:text-blue-800 transition">0282 652 2122</a>
+                    <!-- Telefon Numarası Güncellendi -->
+                    <a href="tel:+905336516680" class="hover:text-blue-800 transition">+90 533 651 66 80</a>
                   </p>
                 </div>
               </div>
@@ -692,13 +694,14 @@
               </div>
             </div>
 
-            <form
+            <form id="contact-form" action="mailto:satis@erlgroup.com.tr" method="post" enctype="text/plain"
               class="rounded-3xl bg-white border border-slate-200 p-5 md:p-6 shadow-sm space-y-4 text-sm"
             >
               <div class="grid md:grid-cols-2 gap-4">
                 <div>
                   <label class="block text-xs font-medium text-slate-700 mb-1.5">Firma / İsim <span class="text-red-500">*</span></label>
                   <input
+                    name="Firma_Isim"
                     type="text"
                     class="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                     placeholder="Firma Adı A.Ş."
@@ -708,6 +711,7 @@
                 <div>
                   <label class="block text-xs font-medium text-slate-700 mb-1.5">E-posta <span class="text-red-500">*</span></label>
                   <input
+                    name="Eposta"
                     type="email"
                     class="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                     placeholder="ornek@sirket.com"
@@ -718,6 +722,7 @@
               <div>
                 <label class="block text-xs font-medium text-slate-700 mb-1.5">Telefon</label>
                 <input
+                  name="Telefon"
                   type="text"
                   class="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                   placeholder="05XX XXX XX XX"
@@ -726,6 +731,7 @@
               <div>
                 <label class="block text-xs font-medium text-slate-700 mb-1.5">Talep Detayları <span class="text-red-500">*</span></label>
                 <textarea
+                  name="Talep_Detaylari"
                   class="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 min-h-[100px] transition"
                   placeholder="Ürün ihtiyaçlarınız ve miktar bilgisi..."
                   required
@@ -782,6 +788,17 @@
     WhatsApp ile İletişim
   </a>
 
+  <!-- Mail Gönderim Bildirimi (Toast Notification) -->
+  <div id="mail-notification" class="fixed bottom-10 left-1/2 -translate-x-1/2 z-50 bg-slate-900 text-white px-6 py-4 rounded-xl shadow-2xl flex items-center gap-4 transition-all duration-500 ease-out transform translate-y-20 opacity-0 pointer-events-none">
+    <div class="w-10 h-10 rounded-full bg-emerald-500 flex items-center justify-center shrink-0 animate-pulse">
+      <i data-lucide="mail-check" class="w-5 h-5 text-white"></i>
+    </div>
+    <div>
+      <h4 class="text-sm font-bold text-emerald-400 mb-0.5">Yönlendiriliyorsunuz...</h4>
+      <p class="text-xs text-slate-300">E-posta istemciniz açılıyor. Lütfen gönderimi onaylayın.</p>
+    </div>
+  </div>
+
   <script>
     // Yıl
     document.getElementById("year").textContent = new Date().getFullYear();
@@ -831,6 +848,24 @@
       mobileMenuClose.addEventListener("click", closeMobileMenu);
     }
     mobileLinks.forEach((link) => link.addEventListener("click", closeMobileMenu));
+
+    // Form Gönderim Bildirimi
+    const contactForm = document.getElementById('contact-form');
+    const notification = document.getElementById('mail-notification');
+
+    if (contactForm && notification) {
+      contactForm.addEventListener('submit', function() {
+        // Bildirimi göster
+        notification.classList.remove('translate-y-20', 'opacity-0');
+        notification.classList.add('translate-y-0', 'opacity-100');
+        
+        // 5 saniye sonra gizle
+        setTimeout(() => {
+          notification.classList.remove('translate-y-0', 'opacity-100');
+          notification.classList.add('translate-y-20', 'opacity-0');
+        }, 5000);
+      });
+    }
   </script>
 </body>
 </html>
