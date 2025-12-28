@@ -6,7 +6,18 @@
   <title>TEKNHICA ERL GROUP | İnşaat Malzemeleri & Hırdavat Toptan</title>
 
   <meta name="description" content="TEKNHICA ERL GROUP, fabrikalar ve toptan satış noktaları için inşaat malzemeleri ve hırdavat ürünlerinde güvenilir tedarik ortağınızdır." />
+  
+  <!-- Favicon & App Icons -->
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <meta name="theme-color" content="#1e3a5f" />
+
+  <!-- Preload Critical Assets -->
+  <link rel="preload" href="logo.png" as="image" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Oswald:wght@400;500;700&display=swap" as="style" />
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LLRLLBHSPL"></script>
@@ -24,7 +35,10 @@
   <meta property="og:description" content="Fabrikalar ve toptan satış noktaları için inşaat malzemeleri ve hırdavat tedarik çözümleri." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.erlgroup.com.tr" />
-  <meta property="og:image" content="https://www.erlgroup.com.tr/og-image.jpg" />
+  <meta property="og:image" content="https://www.erlgroup.com.tr/android-chrome-512x512.png" />
+  <meta property="og:image:width" content="512" />
+  <meta property="og:image:height" content="512" />
+  <meta property="og:site_name" content="TEKNHICA ERL GROUP" />
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -120,15 +134,15 @@
         <div class="flex items-center justify-between py-3">
           
           <!-- Logo -->
-          <a href="#home" class="flex items-center gap-4">
-            <div class="w-20 h-20 rounded-2xl border border-slate-200 bg-white flex items-center justify-center shadow-md transition-transform hover:scale-105">
-              <img src="logo.png" alt="TEKNHICA ERL GROUP Logosu" class="max-h-16 object-contain" />
+          <a href="#home" class="flex items-center gap-2 md:gap-4">
+            <div class="w-14 h-14 md:w-20 md:h-20 rounded-xl md:rounded-2xl border border-slate-200 bg-white flex items-center justify-center shadow-md transition-transform hover:scale-105">
+              <img src="logo.png" alt="TEKNHICA ERL GROUP Logosu" class="max-h-10 md:max-h-16 object-contain" decoding="async" />
             </div>
             <div class="leading-tight">
-              <div class="brand-font text-base md:text-lg font-bold text-slate-800 tracking-[0.25em]">
+              <div class="brand-font text-sm md:text-lg font-bold text-slate-800 tracking-[0.15em] md:tracking-[0.25em]">
                 TEKNHICA ERL GROUP
               </div>
-              <div class="text-xs text-slate-500 font-medium">
+              <div class="text-[10px] md:text-xs text-slate-500 font-medium">
                 İnşaat Malzemeleri & Hırdavat Toptan
               </div>
             </div>
@@ -149,53 +163,6 @@
             </a>
           </nav>
 
-          <!-- Mobile Button -->
-          <button
-            id="mobile-menu-button"
-            class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 transition"
-          >
-            <i id="mobile-menu-icon" data-lucide="menu" class="w-6 h-6 text-slate-800"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="md:hidden fixed inset-0 z-30 hidden">
-        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"></div>
-        <div class="absolute top-0 right-0 w-72 max-w-full h-full bg-slate-950 text-slate-50 flex flex-col shadow-2xl">
-          <div class="flex items-center justify-between px-5 py-5 border-b border-slate-800">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-2xl border border-slate-700 bg-slate-900 flex items-center justify-center">
-                <img src="logo.png" alt="Logo" class="max-h-7 object-contain" />
-              </div>
-              <div class="leading-tight">
-                <div class="brand-font text-[11px] tracking-[0.2em] text-slate-200">
-                  TEKNHICA ERL
-                </div>
-                <div class="text-[10px] text-slate-400">Endüstriyel Tedarik</div>
-              </div>
-            </div>
-            <button
-              id="mobile-menu-close"
-              class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-slate-800 border border-slate-700 hover:bg-slate-700 transition"
-            >
-              <i data-lucide="x" class="w-4 h-4 text-slate-200"></i>
-            </button>
-          </div>
-          <nav class="flex-1 px-5 py-6 text-sm space-y-1">
-            <a href="#about" class="block py-3 border-b border-slate-800/60 hover:text-blue-400 transition" data-mobile-link>Kurumsal</a>
-            <a href="#products" class="block py-3 border-b border-slate-800/60 hover:text-blue-400 transition" data-mobile-link>Ürün Grupları</a>
-            <a href="#how" class="block py-3 border-b border-slate-800/60 hover:text-blue-400 transition" data-mobile-link>Nasıl Çalışıyoruz?</a>
-            <a href="#contact" class="block py-3 border-b border-slate-800/60 hover:text-blue-400 transition" data-mobile-link>İletişim</a>
-            <a
-              href="#contact"
-              class="mt-6 w-full inline-flex justify-center items-center gap-2 px-4 py-3 rounded-xl bg-blue-600 text-white text-sm font-semibold shadow-lg active:scale-95 transition"
-              data-mobile-link
-            >
-              <i data-lucide="file-text" class="w-4 h-4"></i>
-              Hemen Teklif Alın
-            </a>
-          </nav>
         </div>
       </div>
     </header>
@@ -213,10 +180,10 @@
                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
                 <span class="brand-font tracking-[0.28em]">İNŞAAT MALZEMELERİ • HIRDAVAT</span>
               </div>
-              <div class="space-y-4 mt-4">
-                <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 brand-font">
+              <div class="space-y-3 md:space-y-4 mt-3 md:mt-4">
+                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 brand-font">
                   <span class="block leading-tight">Fabrikalar ve toptan alımlar için</span>
-                  <span class="block text-blue-900 mt-4 leading-tight">
+                  <span class="block text-blue-900 mt-2 md:mt-4 leading-tight">
                     güvenilir tedarik ortağınız.
                   </span>
                 </h1>
@@ -227,17 +194,17 @@
                 </p>
               </div>
 
-              <div class="flex flex-wrap items-center gap-3 mt-5">
+              <div class="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 mt-4 md:mt-5">
                 <a
                   href="#contact"
-                  class="inline-flex items-center px-5 py-3 rounded-full bg-blue-900 text-white text-sm font-semibold shadow-md hover:bg-blue-800 transition"
+                  class="inline-flex items-center justify-center px-5 py-3 rounded-full bg-blue-900 text-white text-sm font-semibold shadow-md hover:bg-blue-800 transition"
                 >
                   <i data-lucide="file-text" class="w-4 h-4 mr-2"></i>
                   Toptan Teklif Talep Et
                 </a>
                 <a
                   href="#products"
-                  class="inline-flex items-center px-5 py-3 rounded-full bg-white border border-slate-300 text-sm font-semibold text-slate-800 hover:border-blue-700 hover:text-blue-800 transition"
+                  class="inline-flex items-center justify-center px-5 py-3 rounded-full bg-white border border-slate-300 text-sm font-semibold text-slate-800 hover:border-blue-700 hover:text-blue-800 transition"
                 >
                   <i data-lucide="grid-2x2-check" class="w-4 h-4 mr-2"></i>
                   Ürün Gruplarını Gör
@@ -264,12 +231,12 @@
             </div>
 
             <!-- Right: Logo odaklı temiz kart (No People) -->
-            <div class="relative mt-8 md:mt-0">
+            <div class="relative mt-6 md:mt-0 hidden md:block">
               <div class="absolute -top-6 -left-4 w-40 h-40 bg-emerald-100 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
               <div class="relative rounded-3xl bg-slate-900 shadow-2xl border border-slate-700 p-10 md:p-12 flex flex-col items-center justify-center text-center text-slate-100 transition-transform duration-500 hover:scale-[1.01]">
                 <!-- LOGO BÜYÜTÜLDÜ: Kutu boyutu aynı, iç boşluk (p-6 -> p-2) azaldı, görsel büyüdü -->
                 <div class="w-56 h-56 md:w-80 md:h-80 rounded-3xl bg-white flex items-center justify-center mb-8 border-4 border-slate-200 shadow-xl p-2 transform hover:scale-105 transition duration-300">
-                  <img src="logo.png" alt="TEKNHICA ERL GROUP Logosu" class="max-h-48 md:max-h-72 object-contain" />
+                  <img src="logo.png" alt="TEKNHICA ERL GROUP Logosu" class="max-h-48 md:max-h-72 object-contain" loading="lazy" decoding="async" />
                 </div>
                 
                 <h2 class="brand-font text-lg md:text-xl tracking-[0.4em] text-white mb-4">
@@ -293,6 +260,39 @@
                   </span>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEDEN BİZ? -->
+      <section id="why-us" class="py-10 md:py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+          <div class="text-center mb-8 md:mb-10">
+            <p class="text-[10px] md:text-[11px] uppercase tracking-[0.25em] md:tracking-[0.3em] text-blue-900 brand-font mb-2">Avantajlarımız</p>
+            <h2 class="text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 brand-font">Neden Biz?</h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
+            <div class="rounded-2xl bg-slate-50 border border-slate-200 p-4 md:p-6 text-center transition hover:-translate-y-1 hover:shadow-md">
+              <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-3 md:mb-4">
+                <i data-lucide="package-check" class="w-6 h-6 md:w-7 md:h-7 text-blue-900"></i>
+              </div>
+              <h3 class="font-semibold text-slate-900 mb-1.5 md:mb-2 text-sm md:text-base">Stoklu & Planlı Tedarik</h3>
+              <p class="text-slate-600 text-xs md:text-sm">Sürekli stok takibi ve planlı sipariş yönetimi ile üretim süreçlerinizi aksatmadan destekliyoruz.</p>
+            </div>
+            <div class="rounded-2xl bg-slate-50 border border-slate-200 p-4 md:p-6 text-center transition hover:-translate-y-1 hover:shadow-md">
+              <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-3 md:mb-4">
+                <i data-lucide="headset" class="w-6 h-6 md:w-7 md:h-7 text-emerald-700"></i>
+              </div>
+              <h3 class="font-semibold text-slate-900 mb-1.5 md:mb-2 text-sm md:text-base">Tek Muhatap, Hızlı İletişim</h3>
+              <p class="text-slate-600 text-xs md:text-sm">Tüm talepleriniz için tek bir yetkili muhatap; hızlı geri dönüş ve çözüm odaklı iletişim.</p>
+            </div>
+            <div class="rounded-2xl bg-slate-50 border border-slate-200 p-4 md:p-6 text-center transition hover:-translate-y-1 hover:shadow-md">
+              <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-amber-100 flex items-center justify-center mx-auto mb-3 md:mb-4">
+                <i data-lucide="badge-percent" class="w-6 h-6 md:w-7 md:h-7 text-amber-700"></i>
+              </div>
+              <h3 class="font-semibold text-slate-900 mb-1.5 md:mb-2 text-sm md:text-base">Sanayi Odaklı Fiyatlama</h3>
+              <p class="text-slate-600 text-xs md:text-sm">Toptan alım hacimlerine uygun, sanayi ve fabrika müşterilerine özel rekabetçi fiyat politikası.</p>
             </div>
           </div>
         </div>
@@ -446,15 +446,17 @@
             </p>
           </div>
 
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             <!-- 1: Elektrikli El Aletleri (YEREL DOSYA: matkap.jpg) -->
             <article class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition hover:-translate-y-1 hover:shadow-md">
-              <div class="h-40 overflow-hidden relative">
+              <div class="h-36 md:h-40 overflow-hidden relative">
                 <img
                   src="matkap.jpg"
                   onerror="this.src='https://via.placeholder.com/800x400?text=Gorsel+Yuklenemedi'"
                   alt="Sarı endüstriyel elektrikli matkap ve uçları"
                   class="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div class="p-4 space-y-2 text-sm">
@@ -472,12 +474,14 @@
 
             <!-- 2: El Aletleri & El Takımları (YEREL DOSYA: anahtar.jpg) -->
             <article class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition hover:-translate-y-1 hover:shadow-md">
-              <div class="h-40 overflow-hidden relative">
+              <div class="h-36 md:h-40 overflow-hidden relative">
                 <img
                   src="anahtar.jpg"
                   onerror="this.src='https://via.placeholder.com/800x400?text=Gorsel+Yuklenemedi'"
                   alt="Tezgah üzerinde profesyonel el aletleri ve anahtarlar"
                   class="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div class="p-4 space-y-2 text-sm">
@@ -495,12 +499,14 @@
 
             <!-- 3: İş Güvenliği & KKD (YEREL DOSYA: baret.jpg) -->
             <article class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition hover:-translate-y-1 hover:shadow-md">
-              <div class="h-40 overflow-hidden relative">
+              <div class="h-36 md:h-40 overflow-hidden relative">
                 <img
                   src="baret.jpg"
                   onerror="this.src='https://via.placeholder.com/800x400?text=Gorsel+Yuklenemedi'"
                   alt="Sarı baret ve iş güvenliği ekipmanları"
                   class="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div class="p-4 space-y-2 text-sm">
@@ -518,12 +524,14 @@
 
             <!-- 4: Bağlantı Elemanları (YEREL DOSYA: civata.jpg) -->
             <article class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition hover:-translate-y-1 hover:shadow-md">
-              <div class="h-40 overflow-hidden relative">
+              <div class="h-36 md:h-40 overflow-hidden relative">
                 <img
                   src="civata.jpg"
                   onerror="this.src='https://via.placeholder.com/800x400?text=Gorsel+Yuklenemedi'"
                   alt="Endüstriyel cıvata, vida ve somunlar"
                   class="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div class="p-4 space-y-2 text-sm">
@@ -541,12 +549,14 @@
 
             <!-- 5: Yapı Malzemeleri & Sarf (YEREL DOSYA: tugla.jpg) -->
             <article class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition hover:-translate-y-1 hover:shadow-md">
-              <div class="h-40 overflow-hidden relative">
+              <div class="h-36 md:h-40 overflow-hidden relative">
                 <img
                   src="tugla.jpg"
                   onerror="this.src='https://via.placeholder.com/800x400?text=Gorsel+Yuklenemedi'"
                   alt="İnşaat sahasında tuğla ve yapı malzemeleri"
                   class="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div class="p-4 space-y-2 text-sm">
@@ -564,12 +574,14 @@
 
             <!-- 6: Endüstriyel Ürünler & Atölye (YEREL DOSYA: depo.jpg) -->
             <article class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition hover:-translate-y-1 hover:shadow-md">
-              <div class="h-40 overflow-hidden relative">
+              <div class="h-36 md:h-40 overflow-hidden relative">
                 <img
                   src="depo.jpg"
                   onerror="this.src='https://via.placeholder.com/800x400?text=Gorsel+Yuklenemedi'"
                   alt="Lojistik depo raf sistemleri ve endüstriyel stok"
                   class="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div class="p-4 space-y-2 text-sm">
@@ -587,22 +599,22 @@
           </div>
 
           <!-- Hedef müşteri chipleri -->
-          <div class="mt-10 flex flex-wrap gap-2 text-xs text-slate-600">
-            <span class="px-4 py-2 rounded-full bg-white border border-slate-200">Fabrikalar & üretim tesisleri</span>
-            <span class="px-4 py-2 rounded-full bg-white border border-slate-200">Sanayi işletmeleri</span>
-            <span class="px-4 py-2 rounded-full bg-white border border-slate-200">Toptan satış yapan firmalar</span>
-            <span class="px-4 py-2 rounded-full bg-white border border-slate-200">Proje & şantiye firmaları</span>
+          <div class="mt-8 md:mt-10 flex flex-wrap justify-center gap-2 text-[11px] md:text-xs text-slate-600">
+            <span class="px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-white border border-slate-200">Fabrikalar & üretim tesisleri</span>
+            <span class="px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-white border border-slate-200">Sanayi işletmeleri</span>
+            <span class="px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-white border border-slate-200">Toptan satış yapan firmalar</span>
+            <span class="px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-white border border-slate-200">Proje & şantiye firmaları</span>
           </div>
         </div>
       </section>
 
       <!-- İLETİŞİM -->
-      <section id="contact" class="py-16 bg-slate-50">
-        <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-10 items-stretch">
+      <section id="contact" class="py-12 md:py-16 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-8 md:gap-10 items-stretch">
           <!-- Info & Çalışma Saatleri -->
-          <div class="flex flex-col space-y-6">
+          <div class="flex flex-col space-y-4 md:space-y-6">
             <div>
-              <h2 class="text-2xl md:text-3xl font-bold text-slate-900 brand-font">
+              <h2 class="text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 brand-font">
                 İletişim & Teklif Talepleri
               </h2>
               <p class="text-slate-600 text-sm md:text-base mt-2">
@@ -610,17 +622,17 @@
               </p>
             </div>
 
-            <div class="space-y-4 text-sm bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+            <div class="space-y-3 md:space-y-4 text-sm bg-white p-4 md:p-6 rounded-2xl border border-slate-100 shadow-sm">
               <!-- Adres -->
-              <div class="flex items-start gap-4">
-                <span class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
-                  <i data-lucide="map-pin" class="w-5 h-5 text-blue-900"></i>
+              <div class="flex items-start gap-3 md:gap-4">
+                <span class="w-9 h-9 md:w-10 md:h-10 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
+                  <i data-lucide="map-pin" class="w-4 h-4 md:w-5 md:h-5 text-blue-900"></i>
                 </span>
                 <div>
-                  <div class="text-[11px] uppercase tracking-[0.2em] text-slate-500 brand-font mb-1">
+                  <div class="text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-slate-500 brand-font mb-1">
                     Adres
                   </div>
-                  <p class="text-slate-800 font-medium leading-snug">
+                  <p class="text-slate-800 font-medium leading-snug text-sm">
                     Esentepe, İstanbul Cad 11/A,<br />
                     59850 Çorlu/Tekirdağ, Türkiye
                   </p>
@@ -628,12 +640,12 @@
               </div>
 
               <!-- Telefon -->
-              <div class="flex items-start gap-4">
-                <span class="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center shrink-0">
-                  <i data-lucide="phone" class="w-5 h-5 text-emerald-700"></i>
+              <div class="flex items-start gap-3 md:gap-4">
+                <span class="w-9 h-9 md:w-10 md:h-10 rounded-full bg-emerald-50 flex items-center justify-center shrink-0">
+                  <i data-lucide="phone" class="w-4 h-4 md:w-5 md:h-5 text-emerald-700"></i>
                 </span>
                 <div>
-                  <div class="text-[11px] uppercase tracking-[0.2em] text-slate-500 brand-font mb-1">
+                  <div class="text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-slate-500 brand-font mb-1">
                     Telefon
                   </div>
                   <p class="text-slate-800 font-medium">
@@ -644,12 +656,12 @@
               </div>
 
               <!-- E-posta -->
-              <div class="flex items-start gap-4">
-                <span class="w-10 h-10 rounded-full bg-amber-50 flex items-center justify-center shrink-0">
-                  <i data-lucide="mail" class="w-5 h-5 text-amber-700"></i>
+              <div class="flex items-start gap-3 md:gap-4">
+                <span class="w-9 h-9 md:w-10 md:h-10 rounded-full bg-amber-50 flex items-center justify-center shrink-0">
+                  <i data-lucide="mail" class="w-4 h-4 md:w-5 md:h-5 text-amber-700"></i>
                 </span>
                 <div>
-                  <div class="text-[11px] uppercase tracking-[0.2em] text-slate-500 brand-font mb-1">
+                  <div class="text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-slate-500 brand-font mb-1">
                     E-posta
                   </div>
                   <p class="text-slate-800 font-medium">
@@ -661,16 +673,16 @@
               </div>
 
               <!-- Çalışma Saatleri -->
-              <div class="border-t border-slate-100 pt-4 mt-2">
-                <div class="flex items-start gap-4">
-                   <span class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center shrink-0">
-                    <i data-lucide="clock" class="w-5 h-5 text-slate-700"></i>
+              <div class="border-t border-slate-100 pt-3 md:pt-4 mt-2">
+                <div class="flex items-start gap-3 md:gap-4">
+                   <span class="w-9 h-9 md:w-10 md:h-10 rounded-full bg-slate-50 flex items-center justify-center shrink-0">
+                    <i data-lucide="clock" class="w-4 h-4 md:w-5 md:h-5 text-slate-700"></i>
                   </span>
                   <div class="w-full">
-                    <div class="text-[11px] uppercase tracking-[0.2em] text-slate-500 brand-font mb-2">
+                    <div class="text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-slate-500 brand-font mb-2">
                       Çalışma Saatleri
                     </div>
-                    <ul class="text-xs text-slate-600 space-y-1 w-full max-w-xs">
+                    <ul class="text-[11px] md:text-xs text-slate-600 space-y-1 w-full max-w-xs">
                       <li class="flex justify-between"><span>Pazartesi</span> <span>08:00 – 19:30</span></li>
                       <li class="flex justify-between"><span>Salı</span> <span>08:00 – 19:30</span></li>
                       <li class="flex justify-between"><span>Çarşamba</span> <span>08:00 – 19:30</span></li>
@@ -686,9 +698,9 @@
           </div>
 
           <!-- Map + Form -->
-          <div class="space-y-5">
+          <div class="space-y-4 md:space-y-5">
             <!-- Harita -->
-            <div class="rounded-3xl shadow-lg border-4 border-white overflow-hidden bg-slate-200 h-64 md:h-80 relative group">
+            <div class="rounded-2xl md:rounded-3xl shadow-lg border-2 md:border-4 border-white overflow-hidden bg-slate-200 h-48 md:h-80 relative group">
               <iframe
                 src="https://maps.google.com/maps?q=ARTI+TEKN%C4%B0K+MARKET+Tekirda%C4%9F+%C3%87orlu&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 width="100%"
@@ -706,15 +718,15 @@
             </div>
 
             <form id="contact-form" action="mailto:satis@erlgroup.com.tr" method="post" enctype="text/plain"
-              class="rounded-3xl bg-white border border-slate-200 p-5 md:p-6 shadow-sm space-y-4 text-sm"
+              class="rounded-2xl md:rounded-3xl bg-white border border-slate-200 p-4 md:p-6 shadow-sm space-y-3 md:space-y-4 text-sm"
             >
-              <div class="grid md:grid-cols-2 gap-4">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                 <div>
                   <label class="block text-xs font-medium text-slate-700 mb-1.5">Firma / İsim <span class="text-red-500">*</span></label>
                   <input
                     name="Firma_Isim"
                     type="text"
-                    class="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                    class="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-3 md:py-2.5 text-base md:text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                     placeholder="Firma Adı A.Ş."
                     required
                   />
@@ -724,7 +736,7 @@
                   <input
                     name="Eposta"
                     type="email"
-                    class="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                    class="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-3 md:py-2.5 text-base md:text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                     placeholder="ornek@sirket.com"
                     required
                   />
@@ -734,8 +746,8 @@
                 <label class="block text-xs font-medium text-slate-700 mb-1.5">Telefon</label>
                 <input
                   name="Telefon"
-                  type="text"
-                  class="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                  type="tel"
+                  class="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-3 md:py-2.5 text-base md:text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                   placeholder="05XX XXX XX XX"
                 />
               </div>
@@ -743,14 +755,14 @@
                 <label class="block text-xs font-medium text-slate-700 mb-1.5">Talep Detayları <span class="text-red-500">*</span></label>
                 <textarea
                   name="Talep_Detaylari"
-                  class="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 min-h-[100px] transition"
+                  class="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-3 md:py-2.5 text-base md:text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 min-h-[100px] transition"
                   placeholder="Ürün ihtiyaçlarınız ve miktar bilgisi..."
                   required
                 ></textarea>
               </div>
               <button
                 type="submit"
-                class="w-full md:w-auto inline-flex items-center justify-center px-6 py-3 rounded-full bg-blue-900 text-white text-sm font-semibold shadow-md hover:bg-blue-800 hover:shadow-lg transition transform active:scale-95"
+                class="w-full inline-flex items-center justify-center px-6 py-3.5 md:py-3 rounded-full bg-blue-900 text-white text-sm font-semibold shadow-md hover:bg-blue-800 hover:shadow-lg transition transform active:scale-95"
               >
                 <i data-lucide="send" class="w-4 h-4 mr-2"></i>
                 Talebinizi Gönderin
@@ -763,16 +775,16 @@
 
     <!-- Footer -->
     <footer class="border-t border-slate-200 bg-white">
-      <div class="max-w-6xl mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+      <div class="max-w-6xl mx-auto px-4 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] text-slate-500">
         <div class="text-center md:text-left">
-          <div class="mb-1">© <span id="year"></span> TEKNHICA ERL GROUP. Tüm hakları saklıdır.</div>
+          <div class="mb-1">© <span id="year"></span> TEKNHICA ERL GROUP. Tüm hakları saklıdır. | <a href="mailto:satis@erlgroup.com.tr" class="hover:text-blue-800 transition">satis@erlgroup.com.tr</a></div>
           <!-- Kurumsal Linkler (Güven Göstergesi) -->
           <div class="space-x-2 text-slate-400">
-            <a href="#" class="hover:text-blue-800 transition">KVKK Aydınlatma Metni</a>
+            <button id="footer-kvkk-btn" class="hover:text-blue-800 transition underline">KVKK Aydınlatma Metni</button>
             <span>|</span>
-            <a href="#" class="hover:text-blue-800 transition">Gizlilik Politikası</a>
+            <button id="footer-privacy-btn" class="hover:text-blue-800 transition underline">Gizlilik Politikası</button>
             <span>|</span>
-            <a href="#" class="hover:text-blue-800 transition">Çerez Politikası</a>
+            <button id="footer-cookie-btn" class="hover:text-blue-800 transition underline">Çerez Politikası</button>
           </div>
         </div>
         
@@ -788,15 +800,30 @@
     </footer>
   </div>
 
+  <!-- Policy Modal -->
+  <div id="policy-modal" class="fixed inset-0 z-50 hidden">
+    <div class="absolute inset-0 bg-slate-900/70 backdrop-blur-sm" id="policy-modal-backdrop"></div>
+    <div class="absolute inset-4 md:inset-10 lg:inset-20 bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden">
+      <div class="flex items-center justify-between px-6 py-4 border-b border-slate-200 bg-slate-50">
+        <h3 id="policy-modal-title" class="text-lg font-bold text-slate-900 brand-font"></h3>
+        <button id="policy-modal-close" class="w-10 h-10 rounded-full bg-slate-200 hover:bg-slate-300 flex items-center justify-center transition">
+          <i data-lucide="x" class="w-5 h-5 text-slate-700"></i>
+        </button>
+      </div>
+      <div id="policy-modal-content" class="flex-1 overflow-y-auto p-6 text-sm text-slate-700 leading-relaxed"></div>
+    </div>
+  </div>
+
   <!-- WhatsApp Hızlı İletişim (Canlı Animasyonlu) -->
   <a
-    href="https://wa.me/905336516680"
+    href="https://wa.me/905336516680?text=Merhaba%2C%20TEKNHICA%20ERL%20GROUP%20web%20sitesinden%20ula%C5%9F%C4%B1yorum.%20Toptan%20%C3%BCr%C3%BCn%2Ffiyat%20bilgisi%20almak%20istiyorum."
     target="_blank"
     rel="noopener noreferrer"
     class="fixed bottom-5 right-5 z-50 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2.5 rounded-full shadow-lg flex items-center gap-2 text-xs md:text-sm font-semibold animate-heartbeat transition-all duration-300"
   >
     <i data-lucide="message-circle" class="w-5 h-5"></i>
-    WhatsApp ile İletişim
+    <span class="hidden sm:inline">WhatsApp ile İletişim</span>
+    <span class="sm:hidden">WhatsApp</span>
   </a>
 
   <!-- Mail Gönderim Bildirimi (Toast Notification) -->
@@ -817,6 +844,224 @@
     // Lucide
     lucide.createIcons();
 
+    // Policy Modal Functionality
+    const policyModal = document.getElementById('policy-modal');
+    const policyModalTitle = document.getElementById('policy-modal-title');
+    const policyModalContent = document.getElementById('policy-modal-content');
+    const policyModalClose = document.getElementById('policy-modal-close');
+    const policyModalBackdrop = document.getElementById('policy-modal-backdrop');
+
+    const policyContents = {
+      kvkk: {
+        title: 'KVKK Aydınlatma Metni',
+        content: `
+          <div class="space-y-4">
+            <p class="text-slate-500 text-xs">Son güncelleme: 28 Aralık 2025</p>
+            
+            <h4 class="font-bold text-slate-900">1. Veri Sorumlusu</h4>
+            <p>TEKNHICA ERL GROUP olarak, 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamında veri sorumlusu sıfatıyla kişisel verilerinizi işlemekteyiz.</p>
+            <p><strong>Adres:</strong> Esentepe, İstanbul Cad 11/A, 59850 Çorlu/Tekirdağ, Türkiye</p>
+            <p><strong>E-posta:</strong> <a href="mailto:satis@erlgroup.com.tr" class="text-blue-700 hover:underline">satis@erlgroup.com.tr</a></p>
+            <p><strong>Telefon:</strong> +90 533 651 66 80</p>
+            
+            <h4 class="font-bold text-slate-900">2. İşlenen Kişisel Veriler</h4>
+            <p>Web sitemiz aracılığıyla aşağıdaki kişisel verileriniz işlenebilmektedir:</p>
+            <ul class="list-disc list-inside pl-4 space-y-1">
+              <li>Kimlik bilgileri (ad, soyad, firma adı)</li>
+              <li>İletişim bilgileri (e-posta adresi, telefon numarası)</li>
+              <li>Talep ve şikayet içerikleri</li>
+              <li>Çevrimiçi ziyaretçi verileri (IP adresi, tarayıcı bilgisi, ziyaret edilen sayfalar)</li>
+            </ul>
+            
+            <h4 class="font-bold text-slate-900">3. Kişisel Verilerin İşlenme Amaçları</h4>
+            <p>Kişisel verileriniz aşağıdaki amaçlarla işlenmektedir:</p>
+            <ul class="list-disc list-inside pl-4 space-y-1">
+              <li>İletişim taleplerinizin yanıtlanması</li>
+              <li>Teklif hazırlanması ve sunulması</li>
+              <li>Ticari iletişim faaliyetlerinin yürütülmesi</li>
+              <li>Müşteri ilişkilerinin yönetimi</li>
+              <li>Yasal yükümlülüklerin yerine getirilmesi</li>
+              <li>Web sitesi performansının analizi ve iyileştirilmesi</li>
+            </ul>
+            
+            <h4 class="font-bold text-slate-900">4. Kişisel Verilerin İşlenmesinin Hukuki Sebepleri</h4>
+            <p>Kişisel verileriniz KVKK'nın 5. ve 6. maddelerinde belirtilen aşağıdaki hukuki sebeplere dayanılarak işlenmektedir:</p>
+            <ul class="list-disc list-inside pl-4 space-y-1">
+              <li>Açık rızanızın bulunması</li>
+              <li>Bir sözleşmenin kurulması veya ifası için gerekli olması</li>
+              <li>Hukuki yükümlülüğün yerine getirilmesi</li>
+              <li>Meşru menfaatlerimiz için veri işlenmesinin zorunlu olması</li>
+            </ul>
+            
+            <h4 class="font-bold text-slate-900">5. Kişisel Verilerin Aktarılması</h4>
+            <p>Kişisel verileriniz, yukarıda belirtilen amaçların gerçekleştirilmesi için gerekli olduğu ölçüde:</p>
+            <ul class="list-disc list-inside pl-4 space-y-1">
+              <li>Yasal düzenlemeler gereği kamu kurum ve kuruluşlarına</li>
+              <li>Hizmet aldığımız iş ortaklarımıza (hosting, e-posta hizmeti vb.)</li>
+              <li>Hukuki süreçlerin takibi için avukat ve danışmanlara</li>
+            </ul>
+            <p>aktarılabilmektedir. Kişisel verileriniz, açık rızanız olmaksızın yurt dışına aktarılmamaktadır.</p>
+            
+            <h4 class="font-bold text-slate-900">6. Kişisel Verilerin Saklanma Süresi</h4>
+            <p>Kişisel verileriniz, işleme amacının gerektirdiği süre boyunca ve ilgili mevzuatta öngörülen zamanaşımı süreleri dahilinde saklanmaktadır. İşleme amacı ortadan kalktığında verileriniz silinir, yok edilir veya anonim hale getirilir.</p>
+            
+            <h4 class="font-bold text-slate-900">7. KVKK Kapsamındaki Haklarınız</h4>
+            <p>KVKK'nın 11. maddesi uyarınca aşağıdaki haklara sahipsiniz:</p>
+            <ul class="list-disc list-inside pl-4 space-y-1">
+              <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme</li>
+              <li>Kişisel verileriniz işlenmişse buna ilişkin bilgi talep etme</li>
+              <li>Kişisel verilerinizin işlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme</li>
+              <li>Yurt içinde veya yurt dışında kişisel verilerinizin aktarıldığı üçüncü kişileri bilme</li>
+              <li>Kişisel verilerinizin eksik veya yanlış işlenmiş olması halinde bunların düzeltilmesini isteme</li>
+              <li>KVKK'nın 7. maddesinde öngörülen şartlar çerçevesinde kişisel verilerinizin silinmesini veya yok edilmesini isteme</li>
+              <li>Düzeltme, silme ve yok etme işlemlerinin kişisel verilerinizin aktarıldığı üçüncü kişilere bildirilmesini isteme</li>
+              <li>İşlenen verilerinizin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle aleyhinize bir sonucun ortaya çıkmasına itiraz etme</li>
+              <li>Kişisel verilerinizin kanuna aykırı olarak işlenmesi sebebiyle zarara uğramanız halinde zararın giderilmesini talep etme</li>
+            </ul>
+            
+            <h4 class="font-bold text-slate-900">8. Başvuru Yöntemi</h4>
+            <p>Yukarıda belirtilen haklarınızı kullanmak için <a href="mailto:satis@erlgroup.com.tr" class="text-blue-700 hover:underline">satis@erlgroup.com.tr</a> adresine e-posta göndererek veya Esentepe, İstanbul Cad 11/A, 59850 Çorlu/Tekirdağ adresine yazılı olarak başvurabilirsiniz. Başvurularınız en geç 30 gün içinde ücretsiz olarak sonuçlandırılacaktır.</p>
+          </div>
+        `
+      },
+      privacy: {
+        title: 'Gizlilik Politikası',
+        content: `
+          <div class="space-y-4">
+            <p class="text-slate-500 text-xs">Son güncelleme: 28 Aralık 2025</p>
+            
+            <h4 class="font-bold text-slate-900">1. Giriş</h4>
+            <p>TEKNHICA ERL GROUP olarak gizliliğinize saygı duyuyor ve kişisel verilerinizin korunmasına önem veriyoruz. Bu Gizlilik Politikası, web sitemizi ziyaret ettiğinizde ve hizmetlerimizi kullandığınızda bilgilerinizin nasıl toplandığını, kullanıldığını ve korunduğunu açıklamaktadır.</p>
+            
+            <h4 class="font-bold text-slate-900">2. Topladığımız Bilgiler</h4>
+            <p><strong>Sizin Sağladığınız Bilgiler:</strong></p>
+            <ul class="list-disc list-inside pl-4 space-y-1">
+              <li>İletişim formunu doldurduğunuzda: ad/soyad, firma adı, e-posta, telefon ve mesaj içeriği</li>
+              <li>E-posta veya telefon yoluyla iletişime geçtiğinizde: iletişim bilgileri ve yazışma içerikleri</li>
+            </ul>
+            <p class="mt-3"><strong>Otomatik Olarak Toplanan Bilgiler:</strong></p>
+            <ul class="list-disc list-inside pl-4 space-y-1">
+              <li>IP adresi</li>
+              <li>Tarayıcı türü ve sürümü</li>
+              <li>İşletim sistemi</li>
+              <li>Ziyaret edilen sayfalar ve ziyaret süresi</li>
+              <li>Referans URL (sizi sitemize yönlendiren site)</li>
+            </ul>
+            
+            <h4 class="font-bold text-slate-900">3. Bilgilerin Kullanım Amaçları</h4>
+            <p>Topladığımız bilgileri aşağıdaki amaçlarla kullanıyoruz:</p>
+            <ul class="list-disc list-inside pl-4 space-y-1">
+              <li>Taleplerinize yanıt vermek ve müşteri hizmeti sağlamak</li>
+              <li>Teklif ve fiyat bilgisi sunmak</li>
+              <li>Hizmetlerimiz hakkında bilgilendirme yapmak</li>
+              <li>Web sitesi deneyimini iyileştirmek</li>
+              <li>Yasal yükümlülüklerimizi yerine getirmek</li>
+            </ul>
+            
+            <h4 class="font-bold text-slate-900">4. Bilgilerin Paylaşımı</h4>
+            <p>Kişisel bilgilerinizi satmıyor, kiralamıyor veya pazarlama amaçlı üçüncü taraflarla paylaşmıyoruz. Bilgileriniz yalnızca aşağıdaki durumlarda paylaşılabilir:</p>
+            <ul class="list-disc list-inside pl-4 space-y-1">
+              <li>Yasal zorunluluk halinde yetkili kamu kurumlarıyla</li>
+              <li>Hizmet sağlayıcılarımızla (hosting, e-posta servisi) sadece hizmet sunumu için gerekli olduğu kadar</li>
+            </ul>
+            
+            <h4 class="font-bold text-slate-900">5. Bilgi Güvenliği</h4>
+            <p>Kişisel bilgilerinizi yetkisiz erişime, değiştirilmeye, ifşa edilmeye veya yok edilmeye karşı korumak için uygun teknik ve organizasyonel önlemler alıyoruz. Ancak, internet üzerinden hiçbir veri iletim yönteminin veya elektronik depolama yönteminin %100 güvenli olmadığını unutmayın.</p>
+            
+            <h4 class="font-bold text-slate-900">6. Üçüncü Taraf Bağlantıları</h4>
+            <p>Web sitemiz, üçüncü taraf web sitelerine bağlantılar içerebilir (Google Maps, WhatsApp vb.). Bu sitelerin gizlilik uygulamalarından sorumlu değiliz. Ziyaret ettiğiniz her sitenin gizlilik politikasını incelemenizi öneririz.</p>
+            
+            <h4 class="font-bold text-slate-900">7. Çocukların Gizliliği</h4>
+            <p>Hizmetlerimiz 18 yaşın altındaki bireylere yönelik değildir. Bilerek 18 yaşından küçük kişilerden kişisel bilgi toplamıyoruz.</p>
+            
+            <h4 class="font-bold text-slate-900">8. Politika Değişiklikleri</h4>
+            <p>Bu Gizlilik Politikası'nı zaman zaman güncelleyebiliriz. Değişiklikler bu sayfada yayınlanacak ve önemli değişiklikler için uygun bildirim yapılacaktır.</p>
+            
+            <h4 class="font-bold text-slate-900">9. İletişim</h4>
+            <p>Gizlilik politikamızla ilgili sorularınız için:</p>
+            <p><strong>E-posta:</strong> <a href="mailto:satis@erlgroup.com.tr" class="text-blue-700 hover:underline">satis@erlgroup.com.tr</a></p>
+            <p><strong>Telefon:</strong> +90 533 651 66 80</p>
+            <p><strong>Adres:</strong> Esentepe, İstanbul Cad 11/A, 59850 Çorlu/Tekirdağ</p>
+          </div>
+        `
+      },
+      cookie: {
+        title: 'Çerez Politikası',
+        content: `
+          <div class="space-y-4">
+            <p class="text-slate-500 text-xs">Son güncelleme: 28 Aralık 2025</p>
+            
+            <h4 class="font-bold text-slate-900">1. Çerez Nedir?</h4>
+            <p>Çerezler, web sitemizi ziyaret ettiğinizde tarayıcınız aracılığıyla cihazınıza yerleştirilen küçük metin dosyalarıdır. Bu dosyalar, siteyi nasıl kullandığınızı anlamamıza ve deneyiminizi iyileştirmemize yardımcı olur.</p>
+            
+            <h4 class="font-bold text-slate-900">2. Kullandığımız Çerez Türleri</h4>
+            
+            <p class="mt-3"><strong>Zorunlu Çerezler</strong></p>
+            <p>Bu çerezler, web sitesinin temel işlevlerinin çalışması için gereklidir ve devre dışı bırakılamazlar.</p>
+            <ul class="list-disc list-inside pl-4 space-y-1">
+              <li><strong>erl_cookie_consent:</strong> Çerez tercihlerinizi saklar (1 yıl süreyle)</li>
+            </ul>
+            
+            <p class="mt-3"><strong>Analitik/Performans Çerezleri</strong></p>
+            <p>Web sitesi trafiğini ve kullanıcı davranışlarını analiz etmemize yardımcı olur.</p>
+            <ul class="list-disc list-inside pl-4 space-y-1">
+              <li><strong>Google Analytics (_ga, _gid, _gat):</strong> Anonim ziyaretçi istatistikleri toplar (2 yıla kadar)</li>
+            </ul>
+            
+            <h4 class="font-bold text-slate-900">3. Üçüncü Taraf Çerezleri</h4>
+            <p>Web sitemizde aşağıdaki üçüncü taraf hizmetleri kullanılmaktadır:</p>
+            <ul class="list-disc list-inside pl-4 space-y-1">
+              <li><strong>Google Analytics:</strong> Ziyaretçi analitiği için (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="text-blue-700 hover:underline">Google Gizlilik Politikası</a>)</li>
+              <li><strong>Google Maps:</strong> Konum haritası gösterimi için</li>
+              <li><strong>Google Fonts:</strong> Web yazı tipleri için</li>
+            </ul>
+            
+            <h4 class="font-bold text-slate-900">4. Çerezleri Nasıl Yönetebilirsiniz?</h4>
+            <p>Tarayıcı ayarlarınızdan çerezleri kontrol edebilir veya silebilirsiniz:</p>
+            <ul class="list-disc list-inside pl-4 space-y-1">
+              <li><strong>Chrome:</strong> Ayarlar → Gizlilik ve güvenlik → Çerezler</li>
+              <li><strong>Firefox:</strong> Ayarlar → Gizlilik ve Güvenlik → Çerezler</li>
+              <li><strong>Safari:</strong> Tercihler → Gizlilik → Çerezler</li>
+              <li><strong>Edge:</strong> Ayarlar → Çerezler ve site izinleri</li>
+            </ul>
+            <p class="mt-2">Çerezleri devre dışı bırakmak, web sitesinin bazı özelliklerinin düzgün çalışmamasına neden olabilir.</p>
+            
+            <h4 class="font-bold text-slate-900">5. Google Analytics Devre Dışı Bırakma</h4>
+            <p>Google Analytics takibini devre dışı bırakmak için <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" class="text-blue-700 hover:underline">Google Analytics Opt-out Browser Add-on</a> eklentisini kullanabilirsiniz.</p>
+            
+            <h4 class="font-bold text-slate-900">6. Politika Güncellemeleri</h4>
+            <p>Bu Çerez Politikası'nı zaman zaman güncelleyebiliriz. Güncellemeler bu sayfada yayınlanacaktır.</p>
+            
+            <h4 class="font-bold text-slate-900">7. İletişim</h4>
+            <p>Çerez politikamızla ilgili sorularınız için <a href="mailto:satis@erlgroup.com.tr" class="text-blue-700 hover:underline">satis@erlgroup.com.tr</a> adresinden bize ulaşabilirsiniz.</p>
+          </div>
+        `
+      }
+    };
+
+    function openPolicyModal(type) {
+      const policy = policyContents[type];
+      if (policy) {
+        policyModalTitle.textContent = policy.title;
+        policyModalContent.innerHTML = policy.content;
+        policyModal.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+        lucide.createIcons();
+      }
+    }
+
+    function closePolicyModal() {
+      policyModal.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    if (policyModalClose) policyModalClose.addEventListener('click', closePolicyModal);
+    if (policyModalBackdrop) policyModalBackdrop.addEventListener('click', closePolicyModal);
+
+    document.getElementById('footer-kvkk-btn')?.addEventListener('click', () => openPolicyModal('kvkk'));
+    document.getElementById('footer-privacy-btn')?.addEventListener('click', () => openPolicyModal('privacy'));
+    document.getElementById('footer-cookie-btn')?.addEventListener('click', () => openPolicyModal('cookie'));
+
     // Header shadow
     const header = document.getElementById("site-header");
     window.addEventListener("scroll", () => {
@@ -826,39 +1071,6 @@
         header.classList.remove("shadow-md");
       }
     });
-
-    // Mobile menu
-    const mobileMenuButton = document.getElementById("mobile-menu-button");
-    const mobileMenuClose = document.getElementById("mobile-menu-close");
-    const mobileMenu = document.getElementById("mobile-menu");
-    const mobileLinks = document.querySelectorAll("[data-mobile-link]");
-    const mobileMenuIcon = document.getElementById("mobile-menu-icon");
-
-    function openMobileMenu() {
-      mobileMenu.classList.remove("hidden");
-      document.body.classList.add("overflow-hidden");
-      if (mobileMenuIcon) {
-        mobileMenuIcon.setAttribute("data-lucide", "x");
-        lucide.createIcons();
-      }
-    }
-
-    function closeMobileMenu() {
-      mobileMenu.classList.add("hidden");
-      document.body.classList.remove("overflow-hidden");
-      if (mobileMenuIcon) {
-        mobileMenuIcon.setAttribute("data-lucide", "menu");
-        lucide.createIcons();
-      }
-    }
-
-    if (mobileMenuButton) {
-      mobileMenuButton.addEventListener("click", openMobileMenu);
-    }
-    if (mobileMenuClose) {
-      mobileMenuClose.addEventListener("click", closeMobileMenu);
-    }
-    mobileLinks.forEach((link) => link.addEventListener("click", closeMobileMenu));
 
     // Form Gönderim Bildirimi
     const contactForm = document.getElementById('contact-form');
@@ -877,6 +1089,106 @@
         }, 5000);
       });
     }
+
+    // KVKK / Cookie Consent
+    (function() {
+      const CONSENT_KEY = 'erl_cookie_consent';
+      if (localStorage.getItem(CONSENT_KEY) === 'accepted') return;
+
+      const banner = document.createElement('div');
+      banner.id = 'kvkk-banner';
+      banner.className = 'fixed bottom-0 left-0 right-0 z-40 bg-slate-900 text-slate-100 px-4 py-4 md:py-3 shadow-2xl border-t border-slate-700';
+      banner.innerHTML = `
+        <div class="max-w-6xl mx-auto">
+          <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div class="flex-1 pr-4">
+              <h4 class="text-sm font-semibold text-white mb-1">KVKK & Çerez Bilgilendirme</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">Bu site, iletişim taleplerinizi yanıtlamak ve temel kullanım analitiği için çerezlerden yararlanabilir. Devam ederek KVKK/çerez bilgilendirmesini kabul etmiş olursunuz.</p>
+            </div>
+            <div class="flex items-center gap-3 shrink-0">
+              <button id="kvkk-details-btn" class="text-xs text-slate-400 hover:text-white transition underline">Detaylar</button>
+              <button id="kvkk-accept" class="px-5 py-2 rounded-full bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold transition">Kabul Et</button>
+            </div>
+          </div>
+          <div id="kvkk-details-content" class="hidden mt-4 pt-4 border-t border-slate-700">
+            <div class="text-xs text-slate-300 leading-relaxed space-y-3 max-h-64 overflow-y-auto pr-2">
+              <p class="font-semibold text-white">KVKK Aydınlatma Metni</p>
+              <p>TEKNHICA ERL GROUP olarak, 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamında kişisel verilerinizin güvenliğine önem veriyoruz.</p>
+              <p><strong>Veri Sorumlusu:</strong> TEKNHICA ERL GROUP, Esentepe, İstanbul Cad 11/A, 59850 Çorlu/Tekirdağ</p>
+              <p><strong>İşlenen Kişisel Veriler:</strong> İletişim formumuz aracılığıyla ilettiğiniz ad/soyad, firma adı, e-posta adresi, telefon numarası ve talep detayları.</p>
+              <p><strong>İşleme Amaçları:</strong> Taleplerinizi yanıtlamak, teklif hazırlamak, ticari iletişim kurmak ve yasal yükümlülüklerimizi yerine getirmek.</p>
+              <p><strong>Veri İşleme Hukuki Sebebi:</strong> Açık rızanız, sözleşmenin kurulması veya ifası için gereklilik, yasal yükümlülük.</p>
+              <p><strong>Veri Aktarımı:</strong> Kişisel verileriniz, yasal zorunluluklar dışında üçüncü taraflarla paylaşılmamaktadır.</p>
+              <p><strong>Saklama Süresi:</strong> Kişisel verileriniz, işleme amacının gerektirdiği süre boyunca ve yasal saklama süreleri dahilinde muhafaza edilir.</p>
+              <p><strong>Haklarınız:</strong> KVKK'nın 11. maddesi kapsamında; verilerinize erişim, düzeltme, silme, işlemeyi durdurma ve itiraz etme haklarına sahipsiniz. Başvurularınız için: <a href="mailto:satis@erlgroup.com.tr" class="text-blue-400 hover:underline">satis@erlgroup.com.tr</a></p>
+              <p class="font-semibold text-white pt-2">Çerez Politikası</p>
+              <p>Web sitemiz, kullanıcı deneyimini iyileştirmek ve temel site işlevselliğini sağlamak amacıyla çerezler kullanabilir.</p>
+              <p><strong>Kullanılan Çerez Türleri:</strong></p>
+              <ul class="list-disc list-inside pl-2 space-y-1">
+                <li><strong>Zorunlu Çerezler:</strong> Sitenin düzgün çalışması için gerekli olan çerezlerdir (örn: çerez onay tercihiniz).</li>
+                <li><strong>Analitik Çerezler:</strong> Google Analytics aracılığıyla anonim ziyaretçi istatistikleri toplamak için kullanılır.</li>
+              </ul>
+              <p><strong>Çerez Yönetimi:</strong> Tarayıcı ayarlarınızdan çerezleri devre dışı bırakabilirsiniz. Ancak bu durumda bazı site özellikleri düzgün çalışmayabilir.</p>
+              <p class="text-slate-400 pt-2">Bu bilgilendirmeyi kabul ederek, yukarıda belirtilen şartları anladığınızı ve onayladığınızı beyan etmiş olursunuz.</p>
+            </div>
+          </div>
+        </div>
+      `;
+      banner.style.paddingBottom = '20px';
+      document.body.appendChild(banner);
+
+      document.getElementById('kvkk-details-btn').addEventListener('click', function() {
+        const detailsContent = document.getElementById('kvkk-details-content');
+        detailsContent.classList.toggle('hidden');
+        this.textContent = detailsContent.classList.contains('hidden') ? 'Detaylar' : 'Gizle';
+      });
+
+      document.getElementById('kvkk-accept').addEventListener('click', function() {
+        localStorage.setItem(CONSENT_KEY, 'accepted');
+        banner.remove();
+      });
+    })();
+  </script>
+
+  <!-- LocalBusiness JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "TEKNHICA ERL GROUP",
+    "description": "İnşaat malzemeleri ve hırdavat ürünlerinde fabrikalar ve sanayi işletmeleri için B2B toptan tedarik.",
+    "url": "https://www.erlgroup.com.tr",
+    "telephone": "+905336516680",
+    "email": "satis@erlgroup.com.tr",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Esentepe, İstanbul Cad 11/A",
+      "addressLocality": "Çorlu",
+      "addressRegion": "Tekirdağ",
+      "postalCode": "59850",
+      "addressCountry": "TR"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "19:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "08:00",
+        "closes": "19:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "10:00",
+        "closes": "18:00"
+      }
+    ]
+  }
   </script>
 </body>
 </html>
